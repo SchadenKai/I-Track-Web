@@ -21,5 +21,3 @@ This repository contains the web application for our `I-Track` school project.
 - Fire up a PHP server on localmachin in a port (e.g. 8000)
   - `php -S localhost:8000`
 - Open browser and navigate to `http://localhost:8000`
-
-2
