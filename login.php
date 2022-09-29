@@ -1,3 +1,11 @@
+<!-- Start the session to see if we are referred by an incorrect credentials in login -->
+<?php
+session_start();
+if(isset($_SESSION['userlogin'])){
+    header("Location: index.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,17 +45,27 @@
             <div class="col-lg-5 offset-md-1 pt-5 my-5" >     
                 <img src="assets/profile.png" alt="logo" class="center-block img-fluid">  
                 <h1 align="center" class="mt-3">LOGIN</h1>
-                <form>
+                <form action="validate_user.php" method="POST">
                     <!-- form-label (from bootstrap) Formats label text (e.g. add bottom margin) -->
                     <!-- form-control upgrades input with custom styles, sizing, focus states -->
-                    <div class="mb-3">
+                    
+                    <?php
+                    // Did the user logged in alread and it failed? -->
+                    if(isset($_SESSION["error"])){
+                        $error = $_SESSION["error"];
+                        echo "<span class='error'>$error</span>";
+                    }
+                    ?>  
+                    <div class="my-3">
                         <label for="email" class="form-label">Email Address</label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" required>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
                         <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
-                    </div>                    
+                    </div>              
+
+                    
                     <button type="submit" class="btn btn-primary" id="login" name="login">
                         LOGIN
                     </button>
@@ -60,3 +78,8 @@
     
 </body>
 </html>
+
+
+<?php
+    unset($_SESSION["error"]);
+?>
