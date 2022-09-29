@@ -38,12 +38,9 @@ img.login {
     width: 100%;
 }
 
-/* .row{
-    border: 1px solid #ccc;
-    background-color: #ffffff;
-    border-radius: 30px;
-    width: 50%;
-    height: auto;
-    margin: 7% auto;
-    padding: 25px 10px;
-} */
+.error{
+    color: #D8000C;
+    background-color: #FFBABA;    
+    padding:5px;
+    margin-bottom: 2px;
+}
