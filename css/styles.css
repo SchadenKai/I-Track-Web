@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(242, 242, 242)
+}
+
+.row{
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    
+}
+
+img.login {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vertical-center {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+  
+    display: flex;
+    align-items: center;
+}
+
+.btn{
+    width: 100%;
+}
+
+/* .row{
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    border-radius: 30px;
+    width: 50%;
+    height: auto;
+    margin: 7% auto;
+    padding: 25px 10px;
+} */
