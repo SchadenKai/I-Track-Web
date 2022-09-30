@@ -1,5 +1,5 @@
-<!-- Start the session to see if we are referred by an incorrect credentials in login -->
 <?php
+// Did the user already logged in? If yes, then skip the log in page and proceed to the home page
 session_start();
 if(isset($_SESSION['userlogin'])){
     header("Location: index.php");
@@ -50,7 +50,7 @@ if(isset($_SESSION['userlogin'])){
                     <!-- form-control upgrades input with custom styles, sizing, focus states -->
                     
                     <?php
-                    // Did the user logged in alread and it failed? -->
+                    // Did the user logged in already and it failed? -->
                     if(isset($_SESSION["error"])){
                         $error = $_SESSION["error"];
                         echo "<span class='error'>$error</span>";
@@ -79,7 +79,7 @@ if(isset($_SESSION['userlogin'])){
 </body>
 </html>
 
-
+<!-- Clear up Error session after leaving or reloading the page -->
 <?php
     unset($_SESSION["error"]);
 ?>
