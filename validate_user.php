@@ -1,5 +1,6 @@
 <?php
 session_start();
+// Import the PostgreSQL credential and connection variables from psql_conn
 require_once('psql_conn.php');
 
 // Login Credentials
@@ -14,9 +15,11 @@ $result = pg_execute($db, "check_query", array($usr_email, $usr_pw));
 
 $user = pg_fetch_assoc($result);        
 if (pg_numrows($result) == 1){
+    // If the user is in the database, proceed to homepage
     $_SESSION['userlogin'] = $user;
     header("location: index.php");
 } else {
+    // Else, return to login with an Error message
     $_SESSION['error'] = '&#128680; Incorrect Email or Password <br>';		
     header("location: login.php");
 }
