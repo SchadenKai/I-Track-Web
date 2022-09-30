@@ -18,6 +18,6 @@ This repository contains the web application for our `I-Track` school project.
   - `git clone https://github.com/SchadenKai/myApp.git`
 - Navigate to the folder
   - `cd /path/to/myApp`
-- Fire up a PHP server on localmachin in a port (e.g. 8000)
+- Fire up a PHP server on your device in a given port (e.g. `8000`)
   - `php -S localhost:8000`
 - Open browser and navigate to `http://localhost:8000`
