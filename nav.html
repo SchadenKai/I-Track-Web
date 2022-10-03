@@ -1,0 +1,58 @@
+<!-- Navigation Bar to be used by home(index), dashboard, about, and bulletin page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    <!-- Document Icon -->
+    <link rel = "icon" href = "assets/logo.png" type = "image/x-icon">
+
+    <!-- Bootsrtap. Reference: https://getbootstrap.com/docs/5.2/getting-started/introduction/ -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>    
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<nav class="navbar navbar-dark navbar-expand-md bg-dark py-3 justify-content-center">
+    <div class="container">
+        <span class="navbar-brand d-flex w-50 me-auto" href="#">
+            <img src="assets/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            &nbsp; Student Progress Tracker
+        </span>
+        
+        <!-- Hamburger Icon where nav-item are compressed if the screen is narrow -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsingNavbar3">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation Bar Items -->
+        <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+            <ul class="navbar-nav w-100 justify-content-center">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.php">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="dashboard.php">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="bulletin.php">Bulletin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.php">About</a>
+                </li>
+            </ul>
+            
+            <ul class="nav navbar-nav ms-auto w-100 justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?logout=true">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
