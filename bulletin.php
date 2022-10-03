@@ -18,10 +18,10 @@ session_start();
 
 ?>
 
- <!-- Change the Document Title-->
+<!-- Change the Document Title-->
 <script>
-document.title = "I-Track | Home"
+document.title = "I-Track | Bulletin"
 </script>
 
 <!-- Content of the Page -->
-<h1 style="text-align: center;">This is the Home Page</h1>
+<h1 style="text-align: center;">This is the Bulletin Page</h1>
