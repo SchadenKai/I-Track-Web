@@ -14,7 +14,7 @@ session_start();
 	}
 
 	// Include the Navigation Bar header. 
-	include "nav.html"
+	include "utils/nav.html"
 
 ?>
 

@@ -14,7 +14,7 @@ $result = pg_prepare($db, "check_query", $sql);
 $result = pg_execute($db, "check_query", array($usr_email, $usr_pw));
 
 $user = pg_fetch_assoc($result);        
-if (pg_numrows($result) == 1){
+if (pg_num_rows($result) == 1){
     // If the user is in the database, proceed to homepage
     $_SESSION['userlogin'] = $user;
     header("location: index.php");
