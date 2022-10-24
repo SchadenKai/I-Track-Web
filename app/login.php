@@ -38,14 +38,14 @@ if(isset($_SESSION['userlogin'])){
             <!-- Image to the left of form -->
             <div class="col-lg-5">
                 <!-- fluid image is responsive to its container size -->
-                <img src="assets/logo.png" alt="logo" class="login img-fluid"> 
+                <img src="assets/images/logo.png" alt="logo" class="login img-fluid"> 
             </div>
             
             <!-- Login form -->
             <div class="col-lg-5 offset-md-1 pt-5 my-5" >     
-                <img src="assets/profile.png" alt="logo" class="center-block img-fluid">  
+                <img src="assets/images/profile.png" alt="logo" class="center-block img-fluid">  
                 <h1 align="center" class="mt-3">LOGIN</h1>
-                <form action="validate_user.php" method="POST">
+                <form action="modules/validate_user.php" method="POST">
                     <!-- form-label (from bootstrap) Formats label text (e.g. add bottom margin) -->
                     <!-- form-control upgrades input with custom styles, sizing, focus states -->
                     
@@ -53,7 +53,7 @@ if(isset($_SESSION['userlogin'])){
                     // Did the user logged in already and it failed? -->
                     if(isset($_SESSION["error"])){
                         $error = $_SESSION["error"];
-                        echo "<span class='error'>$error</span>";
+                        echo "<span class='error'>$error   Hello </span>";
                     }
                     ?>  
                     <div class="my-3">
