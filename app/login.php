@@ -45,7 +45,7 @@ if(isset($_SESSION['userlogin'])){
             <div class="col-lg-5 offset-md-1 pt-5 my-5" >     
                 <img src="assets/images/profile.png" alt="logo" class="center-block img-fluid">  
                 <h1 align="center" class="mt-3">LOGIN</h1>
-                <form action="validate_user.php" method="POST">
+                <form action="modules/validate_user.php" method="POST">
                     <!-- form-label (from bootstrap) Formats label text (e.g. add bottom margin) -->
                     <!-- form-control upgrades input with custom styles, sizing, focus states -->
                     

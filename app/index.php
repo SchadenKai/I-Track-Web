@@ -1,5 +1,5 @@
 <?php 
-	include "../includes/validation.php"
+	require "includes/validation.php";
 ?>
 
  <!-- Change the Document Title-->

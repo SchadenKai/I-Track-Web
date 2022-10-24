@@ -1,7 +1,7 @@
 <?php
 session_start();
 // Import the PostgreSQL credential and connection variables from psql_conn
-require_once('configs/psql_conn.php');
+require_once('../configs/psql_conn.php');
 
 // Login Credentials
 $usr_email = $_POST['email'];
