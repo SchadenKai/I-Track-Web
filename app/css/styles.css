@@ -5,7 +5,30 @@
 }
 
 body{
-    background: rgb(242, 242, 242)
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.background-image {
+    background-image: url("../assets/images/sample-bg-2.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.header-bg-img {
+    width: 100%;
+    background-image: url("../assets/images/sample-bg-img.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.glassmorphism-1 {
+    background: rgba(255, 255, 255, 0.842) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37) !important;
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
 }
 
 /* Login box style */
@@ -13,17 +36,18 @@ body{
     background: white;
     border: 1px solid #ccc;
     border-radius: 30px;
-    
+     
 }
 
 /* Rounded image edge */
 img.login {
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
-}
+}    
 
-.btn{
-    width: 100%;
+.btn {
+    width: 200px !important;
+    max-width: 200px;
 }
 
 /* Horizontally center an element */
