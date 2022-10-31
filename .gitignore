@@ -1,1 +1,3 @@
 credentials.ini
+setup/venv
+setup/__pycache__/
