@@ -13,6 +13,7 @@
     <!-- Bootsrtap. Reference: https://getbootstrap.com/docs/5.2/getting-started/introduction/ -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>    
+    <!-- Bootstrap icon CDN-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <!-- External CSS -->
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
@@ -20,7 +21,7 @@
 <body>
 
 <!-- Header Info bar -->
-<header class="header-bg-img-1 ps-5 py-1 w-100" style="height: 15vh">
+<header class="d-flex container-fluid justify-content-between header-bg-img-1 px-5 py-1 " style="height: 15vh">
     <div class="h-100 d-flex flex-row" style="width: 20vw;"> <!-- Left Side Container-->
         <img src="../assets/icons/user-icon-placeholder.png" alt="user-image" class="mh-100"> 
         <div class="d-flex flex-column justify-content-center align-items-center ms-5 text-white">
@@ -32,22 +33,44 @@
             <div class="fw-lighter text-nowrap">brietta.capel@g.batstate-u.edu.ph</div>
         </div>
     </div>
+    
+    <a class="nav-link text-white pt-4 pe-3" href="../index.php?logout=true">
+        <i class="bi bi-box-arrow-left me-2"></i>
+        Logout
+    </a>
+    
 </header>
+<!-- Portal Default Nav -->
 <nav class="container-fluid nav nav-tabs nav-fill">
     <li class="nav-item">
-        <a class="nav-link disabled h-100"  href="../index.php">Home </a>
+        <a class="nav-link disabled h-100"  href="../index.php">
+            <i class="bi bi-house-fill me-2"></i>
+            Home 
+        </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link disabled" href="../index.php">News </a>
+        <a class="nav-link disabled" href="../index.php">
+            <i class="bi bi-newspaper me-2"></i>
+            News 
+        </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link disabled" href="../index.php">Advisories </a>
+        <a class="nav-link disabled" href="../index.php">
+            <i class="bi bi-megaphone me-2"></i>
+            Advisories 
+        </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link disabled" href="../index.php">Schedules </a>
+        <a class="nav-link disabled" href="../index.php">
+            <i class="bi bi-calendar-week me-2"></i>
+            Schedules
+        </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link disabled" href="../index.php">Downloads </a>
+        <a class="nav-link disabled" href="../index.php">
+            <i class="bi bi-download me-2"></i>
+            Downloads 
+        </a>
     </li>
     <li class="nav-item ">
         <a class="nav-link active" aria-current="page" href="../index.php">
@@ -56,39 +79,5 @@
     </li>
 </nav>
 
-<nav class="navbar navbar-dark navbar-expand-md bg-dark py-3 justify-content-center">
-    <div class="container">
-        <span class="navbar-brand d-flex w-50 me-auto" href="#">
-            <img src="../assets/images/header-iconv2.png" width="81" height="30" class="d-inline-block align-top" alt="">
-        </span>
-        
-        <!-- Hamburger Icon where nav-item are compressed if the screen is narrow -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsingNavbar3">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <!-- Navigation Bar Items -->
-        <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
-            <ul class="navbar-nav w-100 justify-content-center">
-                <li class="nav-item active">
-                    <a class="nav-link" href="../index.php">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../pages/bulletin.php">Bulletin</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../pages/about.php">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../pages/dashboard.php">Dashboard</a>
-                </li>
-            </ul>
-            
-            <ul class="nav navbar-nav ms-auto w-100 justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link" href="../index.php?logout=true">Logout</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+

@@ -7,6 +7,17 @@
 body{
     height: 100vh;
     width: 100vw;
+    overflow-x: hidden;
+}
+
+.custom-navbar, .custom-navbar a, .custom-navbar a:hover {
+    background-color: #ffffff;
+    color: #DC3545;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: white;
+    background-color:  #DC3545;
 }
 
 .background-image {
