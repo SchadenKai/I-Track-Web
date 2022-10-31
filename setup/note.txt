@@ -1,0 +1,5 @@
+When adding new table or modifying the old one, apply the changes in:
+    psql.py,
+        CreateEngine.insert_rows()
+    setup_database
+        create and insert query 
