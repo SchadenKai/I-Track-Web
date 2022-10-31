@@ -20,13 +20,13 @@ document.title = "I-Track | Home"
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../index.php">
+                <a class="nav-link" href="/pages/bulletin.php">
                     <i class="bi bi-postcard me-2"></i>
                     Bulletin 
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../index.php">
+                <a class="nav-link" href="/pages/about.php">
                     <i class="bi bi-info-circle me-2"></i>
                     About 
                 </a>
