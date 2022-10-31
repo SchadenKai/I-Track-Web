@@ -28,7 +28,7 @@ if(isset($_SESSION['userlogin'])){
     <link rel="stylesheet" href="/css/styles.css">
 
 </head>
-<body class="background-image">
+<body class="background-image" style="overflow: hidden">
 
 <!-- main section spanning whole vh-->
 <section class="container bg-light w-75 vh-100 p-0 position-relative glassmorphism-1">
