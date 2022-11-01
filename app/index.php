@@ -32,7 +32,8 @@ document.title = "I-Track | Home"
                 </a>
             </li>
 		</nav>
-		<div class="container-fluid p-3 ps-5"> <!-- Main Content Wrapper -->
+		<section class="container-fluid p-3 ps-5"> <!-- Main Content Wrapper -->
+            <!-- Top Section -->
 			<h3 class="d-block ">CLASS 1 AY 2022-2023</h3>
 			<p class="text-secondary fs-6">
 				<i class="bi bi-info-circle me-2"></i>
@@ -47,9 +48,49 @@ document.title = "I-Track | Home"
 					</span>
 				</div>
 			</div>
-		</div>
-		
-
-
+        </section>
+        <section class="d-flex flex-column container-fluid align-items-center">
+            <div class="d-flex flex-column border shadow w-75 h-auto my-5 text-center"> <!-- Visible Container -->
+                <div class="row border-0 bg-white fw-bold text-white">
+                    <div class="col border py-3" style="background-color: #133379;">No.</div>
+                    <div class="col border py-3" style="background-color: #133379;">First Name</div>
+                    <div class="col border py-3" style="background-color: #133379;">Middle Initial</div>
+                    <div class="col border py-3" style="background-color: #133379;">Last Name</div>
+                    <div class="col border py-3" style="background-color: #133379;">Status</div>
+                </div>
+                <a href="/pages/dashboard.php" class="alink-color">
+                    <div class="row border-0 bg-white">
+                        <div class="col border">No.</div>
+                        <div class="col border">First Name</div>
+                        <div class="col border">Middle Initial</div>
+                        <div class="col border">Last Name</div>
+                        <div class="col border">Status</div>
+                    </div>
+                </a>
+                
+                <div class="row border-0 bg-white">
+                    <div class="col border">No.</div>
+                    <div class="col border">First Name</div>
+                    <div class="col border">Middle Initial</div>
+                    <div class="col border">Last Name</div>
+                    <div class="col border">Status</div>
+                </div>
+                <div class="row border-0 bg-white">
+                    <div class="col border">No.</div>
+                    <div class="col border">First Name</div>
+                    <div class="col border">Middle Initial</div>
+                    <div class="col border">Last Name</div>
+                    <div class="col border">Status</div>
+                </div>
+                <div class="row border-0 bg-white">
+                    <div class="col border">No.</div>
+                    <div class="col border">First Name</div>
+                    <div class="col border">Middle Initial</div>
+                    <div class="col border">Last Name</div>
+                    <div class="col border">Status</div>
+                </div>
+                </div>
+            </div>
+        </section>
     </div>
 </div>

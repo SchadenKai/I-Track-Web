@@ -49,7 +49,10 @@ body{
     -webkit-backdrop-filter: blur( 7px );
 }
 
-
+a.alink-color {
+    color: black !important;
+    text-decoration: none !important;
+}
 
 /* Rounded image edge */
 img.login {
