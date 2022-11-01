@@ -10,22 +10,26 @@ body{
     overflow-x: hidden;
 }
 
+/* Modify Color of Nav Buttons */
 .custom-navbar, .custom-navbar a, .custom-navbar a:hover {
     background-color: #ffffff;
     color: #DC3545;
 }
 
+/* Modify Color of Active Nav Button  */
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
     color: white;
     background-color:  #DC3545;
 }
 
+/* Background Image */
 .background-image {
     background-image: url("../assets/images/sample-bg-2.png");
     background-size: cover;
     background-position: center;
 }
 
+/* Header Image for Login Page */
 .header-bg-img {
     width: 100%;
     background-image: url("../assets/images/sample-bg-img.jpg");
@@ -34,6 +38,7 @@ body{
     background-position: center;
 }
 
+/* Header Image for Nav bar */
 .header-bg-img-1 {
     width: 100%;
     background-image: url("../assets/images/nav-bg-img.png");
@@ -42,6 +47,7 @@ body{
     background-position: center;
 }
 
+/* Glass Effect for containers */
 .glassmorphism-1 {
     background: rgba(255, 255, 255, 0.842) !important;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37) !important;
@@ -49,7 +55,8 @@ body{
     -webkit-backdrop-filter: blur( 7px );
 }
 
-a.alink-color {
+/* Overwrite A Link Color */
+a.alink-color, a {
     color: black !important;
     text-decoration: none !important;
 }

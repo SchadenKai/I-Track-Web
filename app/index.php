@@ -33,7 +33,7 @@ document.title = "I-Track | Home"
                 </a>
             </li>
 		</nav>
-        
+        s
         <!-- Top Section Functionalities-->
 		<section class="container-fluid p-3 ps-5"> 
 			<h3 class="d-block ">CLASS 1 AY 2022-2023</h3>
@@ -65,39 +65,35 @@ document.title = "I-Track | Home"
                     <div class="col border py-3" style="background-color: #133379;">Status</div>
                 </div>
                 <!-- Row Header -->
-                <a href="/pages/dashboard.php">
+                <a href="/pages/dashboard.php"> 
                     <div class="row border-0 bg-white">
-                        <div class="col border">No.</div>
-                        <div class="col border">First Name</div>
-                        <div class="col border">Middle Initial</div>
-                        <div class="col border">Last Name</div>
-                        <div class="col border">Status</div>
+                        <div class="col border">1</div>
+                        <div class="col border">Cardo</div>
+                        <div class="col border">A.</div>
+                        <div class="col border">Dalisay</div>
+                        <div class="col border">Regular</div>
                     </div>
                 </a>
-            
-                <div class="row border-0 bg-white">
-                    <div class="col border">No.</div>
-                    <div class="col border">First Name</div>
-                    <div class="col border">Middle Initial</div>
-                    <div class="col border">Last Name</div>
-                    <div class="col border">Status</div>
-                </div>
-                <div class="row border-0 bg-white">
-                    <div class="col border">No.</div>
-                    <div class="col border">First Name</div>
-                    <div class="col border">Middle Initial</div>
-                    <div class="col border">Last Name</div>
-                    <div class="col border">Status</div>
-                </div>
-                <div class="row border-0 bg-white">
-                    <div class="col border">No.</div>
-                    <div class="col border">First Name</div>
-                    <div class="col border">Middle Initial</div>
-                    <div class="col border">Last Name</div>
-                    <div class="col border">Status</div>
+                <a href="/pages/dashboard.php"> 
+                    <div class="row border-0 bg-white">
+                        <div class="col border">1</div>
+                        <div class="col border">Cardo</div>
+                        <div class="col border">A.</div>
+                        <div class="col border">Dalisay</div>
+                        <div class="col border">Regular</div>
+                    </div>
+                </a>
+                <a href="/pages/dashboard.php"> 
+                    <div class="row border-0 bg-white">
+                        <div class="col border">1</div>
+                        <div class="col border">Cardo</div>
+                        <div class="col border">A.</div>
+                        <div class="col border">Dalisay</div>
+                        <div class="col border">Regular</div>
+                    </div>
+                </a>
                 <!-- JS Add element this format to add students -->
                 <!-- Retrieve data from Database -->
-            </div>
         </section>
     </div>
 </div>
