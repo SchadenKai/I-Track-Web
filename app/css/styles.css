@@ -27,12 +27,47 @@ body{
     background-image: url("../assets/images/sample-bg-2.png");
     background-size: cover;
     background-position: center;
+    background-color: rgb(185, 185, 185);
 }
 
+.i-track-icon-rounded {
+    background-image: url("../assets/icons/i-track-round.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.batstateu-icon {
+    background-image: url("../assets/icons/bsu-logo.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.vector-cartoon-graph {
+    background-image: url("../assets/images/graph-cartoon.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.giant-text-headings {
+    font-size: 64px !important;
+    font-weight: bolder !important;
+}
+.i-track-mobile-showcase {
+    background-image: url("../assets/images/i-track-mobile-showcase.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.website-showcase {
+    background-image: url("../assets/images/website-showcase.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 /* Header Image for Login Page */
 .header-bg-img {
     width: 100%;
-    background-image: url("../assets/images/sample-bg-img.jpg");
+    background-image: url("../assets/images/header-img.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -71,7 +106,11 @@ img.login {
     width: 200px !important;
     max-width: 200px;
 }
-
+/* Apply Vertical Margin for div containers inside card-body */
+/* Used in personal information in dashboard */
+.card-body div {
+    margin: 10px 0;
+}
 /* Horizontally center an element */
 .center-block {
     display: block;
