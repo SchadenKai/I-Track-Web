@@ -8,9 +8,9 @@ document.title = "I-Track | Home"
 </script>
 
 <!-- Content of the Page Wrapper-->
-<div class="d-flex w-100 h-100 justify-content-center pt-5">
+<div class="d-flex w-100 h-100 justify-content-center pt-5 background-image">
 	<!-- Content Container -->
-    <div class="shadow border w-100 h-75 mx-5"> 
+    <div class="shadow border w-100 h-75 mx-5 glassmorphism-1"> 
 
 		<!-- I-track Nav -->
         <nav class="nav nav-pills nav-fill custom-navbar">
@@ -33,7 +33,7 @@ document.title = "I-Track | Home"
                 </a>
             </li>
 		</nav>
-        s
+        
         <!-- Top Section Functionalities-->
 		<section class="container-fluid p-3 ps-5"> 
 			<h3 class="d-block ">CLASS 1 AY 2022-2023</h3>
@@ -43,7 +43,10 @@ document.title = "I-Track | Home"
 			</p>
 			<div class="d-flex w-100 justify-content-between mt-3">
                 <!-- Filter Button; create pop up menu-->
-				<button class="btn btn-outline-dark">Filter Options</button> 
+				<button class="btn btn-outline-dark">
+                    <i class="bi bi-filter"></i>
+                    Filter Options
+                </button> 
                 <!-- Search functionality; search through the DB -->
 				<div class="input-group" style="width: 300px;">
 					<input type="text" class="form-control" placeholder="Search Students" aria-label="student-name" aria-describedby="input-group-right">
