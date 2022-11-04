@@ -14,6 +14,6 @@ session_start();
 	}
 
 	// Include the Navigation Bar header. 
-	include "nav.html";
+	include "nav.php";
 
 ?>
