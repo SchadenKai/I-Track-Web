@@ -29,9 +29,9 @@
             <i class="bi bi-envelope"></i>
         </div>
         <!-- Get Access point -->
-        <div class="d-flex flex-column justify-content-center align-items center ms-4 text-white">
-            <div class="fs-2 text-nowrap">Brietta Capel</div>
-            <div class="fw-lighter text-nowrap">brietta.capel@g.batstate-u.edu.ph</div>
+        <div class="d-flex flex-column justify-content-center align-items center ms-4 text-white">            
+            <div class="fs-2 text-nowrap"><?php echo $_SESSION['userlogin']['user_name']; ?></div>
+            <div class="fw-lighter text-nowrap"><?php print_r($_SESSION['userlogin']['email']); ?></div>
         </div>
     </div>
     <!-- Logout a Link -->
