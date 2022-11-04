@@ -1,5 +1,6 @@
 <?php 
 	require "includes/validation.php";
+    include "includes/nav.php";
 ?>
 
  <!-- Change the Document Title-->
@@ -10,7 +11,7 @@ document.title = "I-Track | Home"
 <!-- Content of the Page Wrapper-->
 <div class="d-flex w-100 h-100 justify-content-center pt-5 background-image">
 	<!-- Content Container -->
-    <div class="shadow border w-100 h-75 mx-5 glassmorphism-1"> 
+    <div class="shadow border w-100 mb-5 mx-5 glassmorphism-1" style="max-width:1317px;"> 
 
 		<!-- I-track Nav -->
         <nav class="nav nav-pills nav-fill custom-navbar">

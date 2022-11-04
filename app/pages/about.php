@@ -1,5 +1,6 @@
 <?php 
-	include "../includes/validation.php"
+	require "../includes/validation.php";
+    include "../includes/nav.php";
 ?>
 
 <!-- Change the Document Title-->
