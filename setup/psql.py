@@ -89,6 +89,10 @@ class CreateEngine:
             self.execute_transaction(f"INSERT INTO {table_name} VALUES {crunched_records.decode()}")
             logging.debug("Inserted %s rows to %s table", len(chunk_data), table_name)
 
+    def fetch_records(self, table_name: str):
+        self.__cursor.execute(f"SELECT * FROM {table_name};")
+        return self.__cursor.fetchall()
+
     def close_connection(self):
         """
         Close the database connection

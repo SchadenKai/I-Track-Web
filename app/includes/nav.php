@@ -20,6 +20,7 @@
 <body>
 
 <!-- Header Info bar -->
+
 <header class="d-flex container-fluid justify-content-between header-bg-img-1 px-5 py-1 " style="max-height: 15vh">
     <div class="h-100 d-flex flex-row" style="width: 20vw;"> <!-- Left Side Container-->
         <!-- Get Access point; Admin profile image  -->
@@ -30,9 +31,11 @@
             <i class="bi bi-envelope"></i>
         </div>
         <!-- Get Access point -->
-        <div class="d-flex flex-column justify-content-center align-items center ms-4 text-white">
-            <div class="fs-2 text-nowrap">Brietta Capel</div>
-            <div class="fw-lighter text-nowrap">brietta.capel@g.batstate-u.edu.ph</div>
+
+        <div class="d-flex flex-column justify-content-center align-items center ms-4 text-white">            
+            <div class="fs-2 text-nowrap"><?php echo $_SESSION['userlogin']['user_name']; ?></div>
+            <div class="fw-lighter text-nowrap"><?php print_r($_SESSION['userlogin']['email']); ?></div>
+
         </div>
     </div>
     <!-- Logout a Link -->
