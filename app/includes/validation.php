@@ -13,7 +13,6 @@ session_start();
 		header("Location: ../login.php");
 	}
 
-	// Include the Navigation Bar header. 
-	include "nav.html";
+	
 
 ?>

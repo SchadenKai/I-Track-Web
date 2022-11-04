@@ -1,5 +1,6 @@
 <?php 
-	include "../includes/validation.php"
+	require "../includes/validation.php";
+    include "../includes/nav.html";
 ?>
 
 <!-- Change the Document Title-->
@@ -12,7 +13,7 @@ document.title = "I-Track | Bulletin"
 <div class="d-flex w-100 h-100 justify-content-center pt-5 background-image">
 
 	<!-- Content Container -->
-    <div class="shadow border w-100 h-75 mx-5 glassmorphism-1"> 
+    <div class="shadow border w-100 mx-5 mb-5 glassmorphism-1"> 
 		<!-- I-track Nav -->
         <nav class="nav nav-pills nav-fill custom-navbar">
             <li class="nav-item">
@@ -58,7 +59,7 @@ document.title = "I-Track | Bulletin"
             <form class="d-flex flex-column border rounded h-auto m-5 py-3 px-5 text-center " style="width: 85%; background-color: rgb(185, 185, 185)" method="post" action=""> 
                 <div class="form-floating">
                     <textarea class="form-control shadow" placeholder="Leave a comment here" id="floatingTextarea" style="height: 250px"></textarea>
-                    <label for="floatingTextarea">Comments</label>
+                    <label for="floatingTextarea">Announce something...</label>
                 </div>
                 <button type="submit" class="btn btn-success mt-3 align-self-end" >Upload</button>
             </form>
