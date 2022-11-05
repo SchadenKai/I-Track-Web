@@ -2,6 +2,7 @@
 	require "includes/validation.php";
     include "includes/nav.php";
     include "includes/dashboard.php";
+    include "includes/login_filterOption.php";
 ?>
 
  <!-- Change the Document Title-->
@@ -46,7 +47,7 @@
 			</p>
 			<div class="d-flex w-100 justify-content-between mt-3">
                 <!-- Filter Button; create pop up menu-->
-				<button class="btn btn-outline-dark rounded-pill">
+				<button class="btn btn-outline-dark rounded-pill" onclick="popup('filter')">
                     <i class="bi bi-filter"></i>
                     Filter Options
                 </button> 
@@ -71,7 +72,7 @@
                     <div class="col border py-3" style="background-color: #133379;">Status</div>
                 </div>
                 <!-- Row Header -->
-                <a href="#" onclick="popup_dashboard()"> 
+                <a href="#" onclick="popup('dashboard')"> 
                     <div class="row border-0 bg-white">
                         <div class="col border">1</div>
                         <div class="col border">Cardo</div>
@@ -80,7 +81,7 @@
                         <div class="col border">Regular</div>
                     </div>
                 </a>
-                <a href="#" onclick="popup_dashboard()"> 
+                <a href="#" onclick="popup('dashboard')"> 
                     <div class="row border-0 bg-white">
                         <div class="col border">1</div>
                         <div class="col border">Cardo</div>
@@ -89,7 +90,7 @@
                         <div class="col border">Regular</div>
                     </div>
                 </a>
-                <a href="#" onclick="popup_dashboard()"> 
+                <a href="#" onclick="popup('dashboard')"> 
                     <div class="row border-0 bg-white">
                         <div class="col border">1</div>
                         <div class="col border">Cardo</div>
@@ -104,4 +105,4 @@
     </div>
 </div>
 
-<script type="text/javascript" src="/assets/js/handles.js" async></script>
+<script type="text/javascript" src="/assets/js/login_eventHandles.js" async></script>
