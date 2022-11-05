@@ -22,9 +22,12 @@ function popup(parameter) {
 }
 // Detects if the user clicked outside the popup box -> close the popup
 document.addEventListener('click', function(e) {
+    console.log(e.target);
     if (e.target.classList.contains('active')) {
-        close_popup();
+        close_popup('dashboard');
+        close_popup('filter');
     }
+    
 })
 
 // Close popup function
@@ -34,14 +37,14 @@ function close_popup(parameter) {
         setTimeout(function() {
             dashboard.classList.remove('d-flex');
             dashboard.classList.add('d-none');
-        }, 5);
+        }, 20);
     }
     if (parameter == 'filter') {
         home_filterOption.classList.remove('active');
         setTimeout(function() {
             home_filterOption.classList.remove('d-flex');
             home_filterOption.classList.add('d-none');
-        }, 5);
+        }, 20);
     }
 }
 
