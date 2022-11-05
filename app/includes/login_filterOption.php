@@ -11,7 +11,7 @@
         </div>
         <!-- Body -->
         <div class="card-body d-flex flex-column justify-content-evenly align-items-center px-3 py-2">
-            <!-- School Year Wrapper -->
+            <!-- School Year filter option Wrapper -->
             <div class="d-flex flex-column justify-content-between w-100 my-0">
                 <!-- label -->
                 <p class="fw-semibold">School Year</p>
@@ -29,7 +29,7 @@
                     </ul>
                 </div>
             </div>
-            <!-- Class -->
+            <!-- Class filter option Wrapper -->
             <div class="d-flex flex-column justify-content-between w-100 my-0">
                 <!-- label -->
                 <p class="fw-semibold">Class</p>

@@ -61,7 +61,7 @@ document.title = "I-Track | Bulletin"
                     <textarea class="form-control shadow" placeholder="Leave a comment here" id="floatingTextarea" style="height: 250px"></textarea>
                     <label for="floatingTextarea">Announce something...</label>
                 </div>
-                <button type="submit" class="btn btn-success mt-3 align-self-end" >Upload</button>
+                <button type="submit" class="btn btn-success mt-3 align-self-end rounded-pill" style="min-width: 150px;">Upload</button>
             </form>
         </section>
 		

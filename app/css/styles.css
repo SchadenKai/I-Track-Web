@@ -36,6 +36,7 @@ body{
     border-radius: 15px !important;
 }
 
+/* inserted images */
 .i-track-icon-rounded {
     background-image: url("../assets/icons/i-track-round.png");
     background-size:contain;
@@ -70,6 +71,10 @@ body{
     background-position: center;
     background-repeat: no-repeat;
 }
+/* inserted images */
+
+
+
 /* Header Image for Login Page */
 .header-bg-img {
     width: 100%;
@@ -137,6 +142,7 @@ img.login {
     margin-bottom: 2px;
 }
 
+/* popup before effects */
 #popup_filter,
 #popup {
     position:absolute;
@@ -147,6 +153,7 @@ img.login {
     z-index: 1;
 }
 
+/* popup active effects */
 #popup_filter.active,
 #popup.active {
     top: 15%;

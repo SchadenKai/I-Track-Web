@@ -5,6 +5,7 @@ let home_filterOption =  document.getElementById('popup_filter');
 
 // pop up function
 function popup(parameter) {
+    // set string parameter on onclick call function
     if(parameter == "dashboard") {
         dashboard.classList.add('active');
         setTimeout(function() {
@@ -20,6 +21,8 @@ function popup(parameter) {
         }, 20);
     } 
 }
+
+
 // Detects if the user clicked outside the popup box -> close the popup
 document.addEventListener('click', function(e) {
     console.log(e.target);

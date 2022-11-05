@@ -265,7 +265,7 @@
 					</div>
 				</div>
 			</section>
-			<button type="button" onclick="close_popup('dashboard')" class="btn btn-success rounded-pill align-self-end me-5 mb-3">Done</button>
+			<button type="button" onclick="close_popup('dashboard')" class="btn btn-success rounded-pill align-self-end me-5 mb-3" style="min-width: 200px;">Done</button>
 		</div> <!-- Floating container -->
 	</div> <!-- d-flex centering the container -->
 </body>

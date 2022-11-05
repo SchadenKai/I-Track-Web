@@ -64,6 +64,7 @@
         <section class="d-flex flex-column container-fluid align-items-center"> <!-- Fill width; center content -->
             <!-- Class List Container -->
             <div class="d-flex flex-column border shadow w-75 h-auto my-5 text-center"> 
+                <!-- table headings -->
                 <div class="row border-0 bg-white fw-bold text-white">
                     <div class="col border py-3" style="background-color: #133379;">No.</div>
                     <div class="col border py-3" style="background-color: #133379;">First Name</div>
@@ -72,6 +73,7 @@
                     <div class="col border py-3" style="background-color: #133379;">Status</div>
                 </div>
                 <!-- Row Header -->
+                <!-- future modify - dynamic based on the filtered db -->
                 <a href="#" onclick="popup('dashboard')"> 
                     <div class="row border-0 bg-white">
                         <div class="col border">1</div>
