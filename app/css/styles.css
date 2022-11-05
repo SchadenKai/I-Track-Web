@@ -29,13 +29,14 @@ body{
     background-image: url("../assets/images/sample-bg-2.png");
     background-size: cover;
     background-position: center;
-    background-color: rgb(185, 185, 185);
+    background-repeat: no-repeat;
 }
 
 .rounded {
     border-radius: 15px !important;
 }
 
+/* inserted images */
 .i-track-icon-rounded {
     background-image: url("../assets/icons/i-track-round.png");
     background-size:contain;
@@ -70,6 +71,10 @@ body{
     background-position: center;
     background-repeat: no-repeat;
 }
+/* inserted images */
+
+
+
 /* Header Image for Login Page */
 .header-bg-img {
     width: 100%;
@@ -108,10 +113,6 @@ img.login {
     border-bottom-left-radius: 30px;
 }    
 
-.btn {
-    width: 200px !important;
-    max-width: 200px;
-}
 /* Apply Vertical Margin for div containers inside card-body */
 /* Used in personal information in dashboard */
 .card-body div {
@@ -139,4 +140,28 @@ img.login {
     background-color: #FFBABA;    
     padding:5px;
     margin-bottom: 2px;
+}
+
+/* popup before effects */
+#popup_filter,
+#popup {
+    position:absolute;
+    top:4%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+    z-index: 1;
+}
+
+/* popup active effects */
+#popup_filter.active,
+#popup.active {
+    top: 15%;
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+#popup_filter.active {
+    top:5%;
 }

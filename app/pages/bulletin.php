@@ -1,6 +1,7 @@
 <?php 
 	require "../includes/validation.php";
     include "../includes/nav.php";
+    include "../includes/filterOption.php";
 ?>
 
 <!-- Change the Document Title-->
@@ -48,7 +49,7 @@ document.title = "I-Track | Bulletin"
                 Click the “Filter Options” button to change the class
             </p>
            
-            <button class="btn btn-outline-dark">
+            <button class="btn btn-outline-dark rounded-pill mt-3" onclick="popup('filter')">
                 <i class="bi bi-filter"></i>
                 Filter Options
             </button> 
@@ -61,9 +62,10 @@ document.title = "I-Track | Bulletin"
                     <textarea class="form-control shadow" placeholder="Leave a comment here" id="floatingTextarea" style="height: 250px"></textarea>
                     <label for="floatingTextarea">Announce something...</label>
                 </div>
-                <button type="submit" class="btn btn-success mt-3 align-self-end" >Upload</button>
+                <button type="submit" class="btn btn-success mt-3 align-self-end rounded-pill" style="min-width: 150px;">Upload</button>
             </form>
         </section>
 		
     </div>
 </div>
+<script src="../assets/js/bulletin_eventHandles.js" type="text/javascript" async></script>

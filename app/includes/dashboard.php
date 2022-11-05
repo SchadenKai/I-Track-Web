@@ -1,36 +1,10 @@
-<?php 
-	include "../includes/validation.php"
-?>
 
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <title>Document</title>
-    <!-- Document Icon -->
-    <link rel = "icon" href = "../assets/icons/logo.png" type = "image/x-icon">
-
-    <!-- Bootsrtap. Reference: https://getbootstrap.com/docs/5.2/getting-started/introduction/ -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>    
-    <!-- Bootstrap icon CDN-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <!-- External CSS -->
-    <link rel="stylesheet" type="text/css" href="../css/styles.css">
-</head>
-
-<body style="width:100vw;height:100vh">
-
-<!-- Change the Document Title-->
-<script>
-document.title = "I-Track | Dashboard"
-</script>
+<!-- Background for the index page -->
+<body class="position-relative" style="background-color: #FFE4E0">
 	<!-- Page wrapper; Center content -->
-	<div class="w-100 d-flex align-items-center py-5">
-		<!-- Content -->
-		<div class="d-flex container h-100 flex-column align-items-center py-3 px-0 shadow" style=" max-width:90%; min-width: 960px; background-color: #F2F2F2">
+	<div class="w-100 d-none position-absolute justify-content-center align-items-center py-5 "  id="popup" >
+		<!-- dashboard Content -->
+		<div class="d-flex container border border-info m-0 h-100 flex-column align-items-center py-3 px-0" style=" max-width:1300px; min-width: 960px; background-color: #F2F2F2; box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.534);">
 			<!-- Information header -->
 			<section class="d-flex w-100 mb-4 px-5 justify-content-between">
 				<!-- Image profile; Name and sr code  -->
@@ -106,7 +80,7 @@ document.title = "I-Track | Dashboard"
 						<!-- Content -->
 						<div class="d-flex justify-content-between">
 							<p class="fw-light text-secondary">Characteristics</p> <!--label-->
-							<p class="text-wrap">Confident, Lazy, Creative</p> <!--value-->
+							<p class="text-wrap text-end">Confident, Lazy, Creative</p> <!--value-->
 						</div>
 						<div class="d-flex justify-content-between">
 							<p class="fw-light text-secondary">Interest</p>
@@ -291,11 +265,7 @@ document.title = "I-Track | Dashboard"
 					</div>
 				</div>
 			</section>
-
-			<!--  Temp Button; Assign JS Function (redirecting to page) -->
-			<button class="btn btn-success rounded-pill align-self-end m-3 me-5" onclick="window.location='/index.php'">Back</button>
-		</div>
-	</div>
-	
-
+			<button type="button" onclick="close_popup('dashboard')" class="btn btn-success rounded-pill align-self-end me-5 mb-3" style="min-width: 200px;">Done</button>
+		</div> <!-- Floating container -->
+	</div> <!-- d-flex centering the container -->
 </body>
