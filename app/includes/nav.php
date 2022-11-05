@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <title>Document</title>
     <!-- Document Icon -->
     <link rel = "icon" href = "../assets/icons/logo.png" type = "image/x-icon">
 
@@ -46,7 +45,7 @@
     
 </header>
 <!-- Portal Default Nav -->
-<nav class="container-fluid nav nav-tabs nav-fill">
+<nav class="container-fluid nav nav-tabs nav-fill bg-light">
     <li class="nav-item">
         <a class="nav-link disabled h-100"  href="../index.php">
             <i class="bi bi-house-fill me-2"></i>

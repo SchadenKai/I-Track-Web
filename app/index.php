@@ -1,17 +1,19 @@
 <?php 
 	require "includes/validation.php";
     include "includes/nav.php";
+    include "includes/dashboard.php";
 ?>
 
  <!-- Change the Document Title-->
 <script>
-document.title = "I-Track | Home"
+    document.title = "I-Track | Home";
 </script>
 
 <!-- Content of the Page Wrapper-->
-<div class="d-flex w-100 h-100 justify-content-center pt-5 background-image">
+<div class="d-flex w-100 justify-content-center pt-5" style="min-height: 100%;">
+    
 	<!-- Content Container -->
-    <div class="shadow border w-100 mb-5 mx-5 glassmorphism-1" style="max-width:1317px;"> 
+    <div class="shadow border w-100 mb-5 mx-5 bg-white" style="max-width:1317px;"> 
 
 		<!-- I-track Nav -->
         <nav class="nav nav-pills nav-fill custom-navbar">
@@ -44,7 +46,7 @@ document.title = "I-Track | Home"
 			</p>
 			<div class="d-flex w-100 justify-content-between mt-3">
                 <!-- Filter Button; create pop up menu-->
-				<button class="btn btn-outline-dark">
+				<button class="btn btn-outline-dark rounded-pill">
                     <i class="bi bi-filter"></i>
                     Filter Options
                 </button> 
@@ -69,7 +71,7 @@ document.title = "I-Track | Home"
                     <div class="col border py-3" style="background-color: #133379;">Status</div>
                 </div>
                 <!-- Row Header -->
-                <a href="/pages/dashboard.php"> 
+                <a href="#" onclick="popup_dashboard()"> 
                     <div class="row border-0 bg-white">
                         <div class="col border">1</div>
                         <div class="col border">Cardo</div>
@@ -78,7 +80,7 @@ document.title = "I-Track | Home"
                         <div class="col border">Regular</div>
                     </div>
                 </a>
-                <a href="/pages/dashboard.php"> 
+                <a href="#" onclick="popup_dashboard()"> 
                     <div class="row border-0 bg-white">
                         <div class="col border">1</div>
                         <div class="col border">Cardo</div>
@@ -87,7 +89,7 @@ document.title = "I-Track | Home"
                         <div class="col border">Regular</div>
                     </div>
                 </a>
-                <a href="/pages/dashboard.php"> 
+                <a href="#" onclick="popup_dashboard()"> 
                     <div class="row border-0 bg-white">
                         <div class="col border">1</div>
                         <div class="col border">Cardo</div>
@@ -101,3 +103,5 @@ document.title = "I-Track | Home"
         </section>
     </div>
 </div>
+
+<script type="text/javascript" src="/assets/js/handles.js" async></script>

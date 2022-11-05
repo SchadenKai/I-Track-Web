@@ -29,7 +29,7 @@ body{
     background-image: url("../assets/images/sample-bg-2.png");
     background-size: cover;
     background-position: center;
-    background-color: rgb(185, 185, 185);
+    background-repeat: no-repeat;
 }
 
 .rounded {
@@ -139,4 +139,20 @@ img.login {
     background-color: #FFBABA;    
     padding:5px;
     margin-bottom: 2px;
+}
+
+#popup {
+    position:absolute;
+
+    opacity: 0;
+    visibility: hidden;
+    transition:alls 0.5s;
+    z-index: 1;
+}
+
+#popup.active {
+    top: 15%;
+    visibility: visible;
+    opacity: 1;
+    transition:all 0.5s ;
 }

@@ -48,7 +48,7 @@ document.title = "I-Track | Bulletin"
                 Click the “Filter Options” button to change the class
             </p>
            
-            <button class="btn btn-outline-dark">
+            <button class="btn btn-outline-dark rounded-pill mt-3">
                 <i class="bi bi-filter"></i>
                 Filter Options
             </button> 
