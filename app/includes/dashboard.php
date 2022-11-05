@@ -4,7 +4,7 @@
 	<!-- Page wrapper; Center content -->
 	<div class="w-100 d-none position-absolute justify-content-center align-items-center py-5 "  id="popup" >
 		<!-- dashboard Content -->
-		<div class="d-flex container m-0 h-100 flex-column align-items-center py-3 px-0" style=" max-width:1300px; min-width: 960px; background-color: #F2F2F2; box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.534);">
+		<div class="d-flex container border border-info m-0 h-100 flex-column align-items-center py-3 px-0" style=" max-width:1300px; min-width: 960px; background-color: #F2F2F2; box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.534);">
 			<!-- Information header -->
 			<section class="d-flex w-100 mb-4 px-5 justify-content-between">
 				<!-- Image profile; Name and sr code  -->

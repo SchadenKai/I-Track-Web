@@ -1,7 +1,7 @@
     <!-- Page Wrapper for centering div-->
 <div class="d-none position-absolute flex-column justify-content-center align-items-center w-100 h-100" id="popup_filter">
     <!-- Card Content Container -->
-    <div class="card shadow" style="max-width: 600px; min-width:400px;">
+    <div class="card shadow border border-danger border-3" style="max-width: 600px; min-width:400px;">
         <div class="card-header d-flex w-100 justify-content-between align-items-center fw-semibold">
             Filter Options
             <!-- close button -->

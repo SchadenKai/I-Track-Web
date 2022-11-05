@@ -1,6 +1,7 @@
 <?php 
 	require "../includes/validation.php";
     include "../includes/nav.php";
+    include "../includes/filterOption.php";
 ?>
 
 <!-- Change the Document Title-->
@@ -48,7 +49,7 @@ document.title = "I-Track | Bulletin"
                 Click the “Filter Options” button to change the class
             </p>
            
-            <button class="btn btn-outline-dark rounded-pill mt-3">
+            <button class="btn btn-outline-dark rounded-pill mt-3" onclick="popup('filter')">
                 <i class="bi bi-filter"></i>
                 Filter Options
             </button> 
@@ -67,3 +68,4 @@ document.title = "I-Track | Bulletin"
 		
     </div>
 </div>
+<script src="../assets/js/bulletin_eventHandles.js" type="text/javascript" async></script>
