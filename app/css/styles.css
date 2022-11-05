@@ -146,7 +146,7 @@ img.login {
 
     opacity: 0;
     visibility: hidden;
-    transition:alls 0.5s;
+    transition: all 0.15s linear;
     z-index: 1;
 }
 
@@ -154,5 +154,5 @@ img.login {
     top: 15%;
     visibility: visible;
     opacity: 1;
-    transition:all 0.5s ;
+    transition: all 0.15s linear;
 }

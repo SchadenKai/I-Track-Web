@@ -1,40 +1,37 @@
+
+// pop up window for dashboard
 let popupElement = document.getElementById('popup');
-    
-
     function popup_dashboard() {
-            popupElement.classList.add('active');
-            
-            setTimeout(function() {
-                popupElement.classList.remove('d-none');
-                popupElement.classList.add('d-flex');
-                
-            }, 30);
-        }
+        console.log(popupElement)
+        popupElement.classList.add('active');
 
-    
-let isClosest = document.querySelector('#window-popup');
+        /* popupElement.addEventListener('transitionend', function(e) {
 
-document.addEventListener("click", (e => {
-    console.log( popupElement);
-    console.log(isClosest);
-        if (popupElement.classList.contains('d-flex')) {
-            if (isClosest){
-                console.log('working');
-
-                console.log(isClosest);
-                console.log(popupElement);
-                
-                popupElement.classList.remove("active");
-                setTimeout( () => {
-                    popupElement.classList.remove('d-flex');
-                    popupElement.classList.add('d-none');
-                },5);
-            }
-        }
+            popupElement.classList.remove('d-none');
+            popupElement.classList.add('d-flex');
+        }) */
+        setTimeout(function() {
+            popupElement.classList.remove('d-none');
+            popupElement.classList.add('d-flex');
+        }, 20);
     }
-));
+    document.addEventListener('click', function(e) {
+        console.log(e.target);
+        if (e.target.classList.contains('active')) {
+            close_popup();
+            console.log('this is hey');
+        }
+    })
+    function close_popup() {
+        popupElement.classList.remove('active');
+        setTimeout(function() {
+            popupElement.classList.remove('d-flex');
+            popupElement.classList.add('d-none');
+        }, 5);
+    }
+ 
 
-
-document.addEventListener('click', function(e) { 
+// Handle click events in the document 
+/*document.addEventListener('click', function(e) { 
     console.log(e.target)
-}, false);
+}, false); */
