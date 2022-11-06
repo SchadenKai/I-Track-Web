@@ -70,7 +70,7 @@ if(isset($_SESSION['userlogin'])){
                         <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
                         <label for="password" class="form-label">Password</label>
                     </div>              
-                        <button type="submit" class="btn btn-warning rounded-pill mt-1" id="login" name="login" >
+                        <button type="submit" class="btn btn-warning rounded-pill mt-1" id="login" name="login" style="min-width: 120px;">
                         Login
                     </button>
                 </form>

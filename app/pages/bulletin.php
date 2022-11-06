@@ -49,7 +49,7 @@ document.title = "I-Track | Bulletin"
                 Click the “Filter Options” button to change the class
             </p>
            
-            <button class="btn btn-outline-dark rounded-pill mt-3" onclick="popup('filter')">
+            <button class="btn btn-outline-dark rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#filterOptions">
                 <i class="bi bi-filter"></i>
                 Filter Options
             </button> 
