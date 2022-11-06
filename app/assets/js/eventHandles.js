@@ -3,6 +3,7 @@
 let dashboard = document.getElementById('popup');
 let filterOption =  document.getElementById('popup_filter');
 
+let courseFilterOption = document.getElementById('course_popup');
 // pop up function
 function popup(parameter) {
     // set string parameter on onclick call function
@@ -20,6 +21,14 @@ function popup(parameter) {
             filterOption.classList.add('d-flex');
         }, 20);
     } 
+    if(parameter == "course_filter") {
+        console.log('this is testing');
+        courseFilterOption.classList.add('active');
+        setTimeout(function() {
+            courseFilterOption.classList.remove('d-none');
+            courseFilterOption.classList.add('d-flex');
+        }, 20);
+    }
 }
 
 
@@ -30,7 +39,6 @@ document.addEventListener('click', function(e) {
         close_popup('dashboard');
         close_popup('filter');
     }
-    
 })
 
 // Close popup function
@@ -49,9 +57,32 @@ function close_popup(parameter) {
             filterOption.classList.add('d-none');
         }, 20);
     }
+    if(parameter == "course_filter") {
+        console.log("this is close");
+        courseFilterOption.classList.remove('active');
+        setTimeout(function() {
+            courseFilterOption.classList.remove('d-flex');
+            courseFilterOption.classList.add('d-none');
+        }, 20);
+    }
 }
 
-
+// Enable nested modal 
+Array.from(document.getElementsByClassName('showmodal')).forEach( (e) => {
+    console.log(e.target);
+    e.addEventListener('click', function(element) {
+      element.preventDefault();
+      if (e.hasAttribute('data-show-modal')) {
+        showModal(e.getAttribute('data-show-modal'));
+      }
+    }); 
+  });
+  // Show modal dialog
+function showModal(modal) {
+    const mid = document.getElementById(modal);
+    let myModal = new bootstrap.Modal(mid);
+    myModal.show();
+}
 
 
 // Handle click events in the document - debug 

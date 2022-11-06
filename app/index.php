@@ -3,6 +3,8 @@
     include "includes/nav.php";
     include "includes/dashboard.php";
     include "includes/filterOption.php";
+    include "includes/course_filterOption.php";
+    include "includes/year_filterOption.php"
 ?>
 
  <!-- Change the Document Title-->
@@ -39,7 +41,7 @@
 		</nav>
         
         <!-- Top Section Functionalities-->
-		<section class="container-fluid p-3 ps-5"> 
+		<section class="container-fluid p-3 px-5"> 
 			<h3 class="d-block ">CLASS 1 AY 2022-2023</h3>
 			<p class="text-secondary fs-6">
 				<i class="bi bi-info-circle me-2"></i>
@@ -47,7 +49,7 @@
 			</p>
 			<div class="d-flex w-100 justify-content-between mt-3">
                 <!-- Filter Button; create pop up menu-->
-				<button class="btn btn-outline-dark rounded-pill" onclick="popup('filter')">
+				<button class="btn btn-outline-dark rounded-pill" data-bs-toggle="modal" data-bs-target="#filterOptions">
                     <i class="bi bi-filter"></i>
                     Filter Options
                 </button> 
@@ -63,18 +65,21 @@
 
         <section class="d-flex flex-column container-fluid align-items-center"> <!-- Fill width; center content -->
             <!-- Class List Container -->
-            <div class="d-flex flex-column border shadow w-75 h-auto my-5 text-center"> 
+            <div class="d-flex flex-column border shadow h-auto my-5 text-center" style="min-width: 85%;"> 
                 <!-- table headings -->
-                <div class="row border-0 bg-white fw-bold text-white">
+                <a href="#">
+                   <div class="row border-0 bg-white fw-bold text-white">
                     <div class="col border py-3" style="background-color: #133379;">No.</div>
                     <div class="col border py-3" style="background-color: #133379;">First Name</div>
                     <div class="col border py-3" style="background-color: #133379;">Middle Initial</div>
                     <div class="col border py-3" style="background-color: #133379;">Last Name</div>
                     <div class="col border py-3" style="background-color: #133379;">Status</div>
-                </div>
+                </div> 
+                </a>
+                
                 <!-- Row Header -->
                 <!-- future modify - dynamic based on the filtered db -->
-                <a href="#" onclick="popup('dashboard')"> 
+                <a href="#" data-bs-target="#dashboard" data-bs-toggle="modal"> 
                     <div class="row border-0 bg-white">
                         <div class="col border">1</div>
                         <div class="col border">Cardo</div>
@@ -83,7 +88,7 @@
                         <div class="col border">Regular</div>
                     </div>
                 </a>
-                <a href="#" onclick="popup('dashboard')"> 
+                <a href="#" data-bs-target="#dashboard" data-bs-toggle="modal"> 
                     <div class="row border-0 bg-white">
                         <div class="col border">1</div>
                         <div class="col border">Cardo</div>
@@ -92,7 +97,7 @@
                         <div class="col border">Regular</div>
                     </div>
                 </a>
-                <a href="#" onclick="popup('dashboard')"> 
+                <a href="#" data-bs-target="#dashboard" data-bs-toggle="modal"> 
                     <div class="row border-0 bg-white">
                         <div class="col border">1</div>
                         <div class="col border">Cardo</div>
@@ -107,4 +112,4 @@
     </div>
 </div>
 
-<script type="text/javascript" src="/assets/js/login_eventHandles.js" async></script>
+<script type="text/javascript" src="/assets/js/eventHandles.js" async></script>
