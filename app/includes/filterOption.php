@@ -24,7 +24,7 @@
                 <div class="dropdown py-1 w-100 my-1">
                     <button class="btn btn-outline-dark rounded-pill w-100" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                         <!-- Reference ul dropdown items -->
-                        2022-2023 
+                        Class 1
                     </button>
                     <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
                         <li><a class="dropdown-item" href="#">Class 1</a></li>
