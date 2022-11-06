@@ -32,9 +32,7 @@ body{
     background-repeat: no-repeat;
 }
 
-.rounded {
-    border-radius: 15px !important;
-}
+
 
 /* inserted images */
 .i-track-icon-rounded {
@@ -107,11 +105,6 @@ a.alink-color, a {
     text-decoration: none !important;
 }
 
-/* Rounded image edge */
-img.login {
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-}    
 
 /* Apply Vertical Margin for div containers inside card-body */
 /* Used in personal information in dashboard */
