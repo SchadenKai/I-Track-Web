@@ -23,7 +23,7 @@
                         
                         <div class="row justify-content-evenly w-100 h-50 align-self-start mt-5" style="max-height:190px">
                             <!-- Basic Information -->
-                            <div class="col-2 d-flex flex-column cstm-card-1 fs-5" >
+                            <div class="col-2 d-flex flex-column cstm-card-1 fs-5 px-2 py-1" >
                                 <!-- Title -->
                                 <p class="m-0 fs-5 fw-semibold text-wrap mb-2">Basic Information</p>
                                 <!-- Content -->
@@ -45,7 +45,7 @@
                                 </div>
                             </div>
                             <!-- Academic Related -->
-                            <div class="col-3 d-flex flex-column cstm-card-1 mx-3 fs-5">
+                            <div class="col-3 d-flex flex-column cstm-card-1 mx-3 fs-5 px-2 py-1">
                                 <!-- Title -->
                                 <p class="m-0 fs-5 fw-semibold text-wrap mb-2">Academic-related Information</p>
                                 <!-- Content -->
@@ -71,7 +71,7 @@
                                 </div>
                             </div>
                             <!-- Personality -->
-                            <div class="col-3 d-flex flex-column cstm-card-1 fs-5">
+                            <div class="col-3 d-flex flex-column cstm-card-1 fs-5 px-2 py-1">
                                 <!-- Title -->
                                 <p class="m-0 fs-5 fw-semibold text-wrap mb-2">Personality </p>
                                 <!-- Content -->
@@ -89,7 +89,7 @@
                                 </div>
                             </div>
                             <!-- Financial -->
-                            <div class="col-3 d-flex flex-column cstm-card-1 ms-3 fs-5">
+                            <div class="col-3 d-flex flex-column cstm-card-1 ms-3 fs-5 px-2 py-1">
                                 <!-- Title -->
                                 <p class="m-0 fs-5 fw-semibold text-wrap mb-2">Financial Information</p>
                                 <!-- Content -->

@@ -13,10 +13,10 @@
                         2022-2023 
                     </button>
                     <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item" href="#">2022-2023</a></li>
-                        <li><a class="dropdown-item" href="#">2021-2022</a></li>
-                        <li><a class="dropdown-item" href="#">2020-2021</a></li>
-                        <li><a class="dropdown-item" href="#">2019-2020</a></li>
+                        <li><a class="dropdown-item yearFilter" href="#">2022-2023</a></li>
+                        <li><a class="dropdown-item yearFilter" href="#">2021-2022</a></li>
+                        <li><a class="dropdown-item yearFilter" href="#">2020-2021</a></li>
+                        <li><a class="dropdown-item yearFilter" href="#">2019-2020</a></li>
                     </ul>
                 </div>
                 <p class="fw-semibold">Class</p>

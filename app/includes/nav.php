@@ -13,6 +13,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>    
     <!-- Bootstrap icon CDN-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <!-- External CSS -->
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
@@ -20,10 +22,10 @@
 
 <!-- Header Info bar -->
 
-<header class="d-flex container-fluid justify-content-between header-bg-img-1 px-5 py-1 " style="max-height: 15vh">
+<header class="d-flex container-fluid justify-content-between header-bg-img-1 px-5 py-1 " style="max-height: 300px">
     <div class="h-100 d-flex flex-row" style="width: 20vw;"> <!-- Left Side Container-->
         <!-- Get Access point; Admin profile image  -->
-        <img src="../assets/icons/user-icon-placeholder.png" alt="user-image" style="max-width:122px; max-height:122px"> 
+        <img src="../assets/icons/user-icon-placeholder.png" class="mh-100" alt="user-image" style="max-width:122px"> 
 
         <div class="d-flex flex-column justify-content-center align-items-center ms-5 text-white">
             <i class="bi bi-person fs-2"></i>
