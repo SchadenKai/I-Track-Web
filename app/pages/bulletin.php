@@ -68,4 +68,4 @@ document.title = "I-Track | Bulletin"
 		
     </div>
 </div>
-<script src="../assets/js/bulletin_eventHandles.js" type="text/javascript" async></script>
+<script src="../assets/js/eventHandles.js" type="text/javascript" async></script>

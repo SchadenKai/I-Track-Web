@@ -20,10 +20,10 @@
 
 <!-- Header Info bar -->
 
-<header class="d-flex container-fluid justify-content-between header-bg-img-1 px-5 py-1 " style="max-height: 15vh">
+<header class="d-flex container-fluid justify-content-between header-bg-img-1 px-5 py-1 " style="max-height: 300px">
     <div class="h-100 d-flex flex-row" style="width: 20vw;"> <!-- Left Side Container-->
         <!-- Get Access point; Admin profile image  -->
-        <img src="../assets/icons/user-icon-placeholder.png" alt="user-image" style="max-width:122px; max-height:122px"> 
+        <img src="../assets/icons/user-icon-placeholder.png" class="mh-100" alt="user-image" style="max-width:122px"> 
 
         <div class="d-flex flex-column justify-content-center align-items-center ms-5 text-white">
             <i class="bi bi-person fs-2"></i>
