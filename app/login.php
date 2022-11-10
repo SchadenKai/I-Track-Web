@@ -28,61 +28,59 @@ if(isset($_SESSION['userlogin'])){
     <link rel="stylesheet" href="/css/styles.css">
 
 </head>
-<body class="background-image">
+<body class="background-image" style="overflow: hidden; height: 100vh">
 
 <!-- main section spanning whole vh-->
-<section class="container bg-light w-75 vh-100 p-0 position-relative glassmorphism-1">
+<section class=" container bg-light h-100 p-0 glassmorphism-1" style="max-width: 1000px;">
 
     <!-- heading image -->
-    <header class="d-flex h-25 p-0 shadow bg-secondary"  >
-        
-        <!-- contain image 100% size of the container -->
-        <!-- <img src> insert image here -->
-       <div class="header-bg-img"></div> <!--temporary -->
-    </header>
+    <img src="/assets/images/header-img.png" class="w-100">
 
     <!-- logo image rounded corners -->
     <!-- position on top of other elements / position to center up 25% -->
-    <div class="bg-white shadow rounded-circle position-absolute translate-middle top-25 start-50" style="width:125px; height:125px; min-width:0px; min-height:0px; z-index:1">
+    <div class="d-flex justify-content-center" style="margin-top:-50px; padding-top:20px">
         <!-- contain logo 100% size of the container -->
-        <img src="assets/icons/i-track-logo.png" alt="logo" class="center-block h-100"> 
+        <img src="assets/icons/i-track-logo.png" alt="logo" class="bg-white shadow rounded-circle" style="max-width:15%; min-width:50px; z-index:1"> 
     </div>  
-    <h1 class="text-center" style="margin-top: 125px">I-Track: Login</h1>
-    <!-- card for input elements  -->
-    <div class="card position-absolute center-block top-50 start-0 end-0 mt-3 px-2 shadow-lg " style="max-width: 835px;">
-        <div class="card-header bg-transparent fs-3 my-3">
-            Please Login
-        </div>
-        <div class="card-body text-end">
-            <form action="modules/validate_user.php" method="POST">
-                <!-- form-label (from bootstrap) Formats label text (e.g. add bottom margin) -->
-                <!-- form-control upgrades input with custom styles, sizing, focus states -->
-                
-                <?php
-                // Did the user logged in already and it failed? -->
-                if(isset($_SESSION["error"])){
-                    $error = $_SESSION["error"];
-                    echo "<span class='error'>$error</span>";
-                }
-                ?>
+    <div class="d-flex flex-column justify-content-evenly align-items-center h-50 mt-5">
+        <h1 sclass="text-center my-3">I-Track: Login</h1>
+        <!-- card for input elements  -->
+        <div class="card center-block px-2 shadow-lg w-75" style="max-width: 835px;">
+            <div class="card-header bg-transparent  pb-3 my-3 fs-5">
+                Please Login
+            </div>
+            <div class="card-body text-end pt-0 w-100">
+                <form action="modules/validate_user.php" method="POST">
+                    <!-- form-label (from bootstrap) Formats label text (e.g. add bottom margin) -->
+                    <!-- form-control upgrades input with custom styles, sizing, focus states -->
+                    
+                    <?php
+                    // Did the user logged in already and it failed? -->
+                    if(isset($_SESSION["error"])){
+                        $error = $_SESSION["error"];
+                        echo "<span class='error'>$error</span>";
+                    }
+                    ?>
 
-                <div class="mb-3 form-floating">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" required>
-                    <label for="email" class="form-label">Email Address</label>
-                </div>
-                <div class="mb-3 form-floating">
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
-                    <label for="password" class="form-label">Password</label>
-                </div>              
-                    <button type="submit" class="btn btn-primary mt-3" id="login" name="login" >
-                    Login
-                </button>
-            </form>
-        </div>
-        <div class="card-footer text-muted text-end fs-6 bg-transparent lh-lg">
-            &#169 I-Track: Student Progress Tracking System
+                    <div class="mb-3 form-floating">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" required>
+                        <label for="email" class="form-label">Email Address</label>
+                    </div>
+                    <div class="mb-3 form-floating">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+                        <label for="password" class="form-label">Password</label>
+                    </div>              
+                        <button type="submit" class="btn btn-warning rounded-pill mt-1" id="login" name="login" style="min-width: 120px;">
+                        Login
+                    </button>
+                </form>
+            </div>
+            <div class="card-footer text-muted text-end fs-6 bg-transparent lh-lg">
+                &#169 I-Track: Student Progress Tracking System
+            </div>
         </div>
     </div>
+    
 </section>
 
     

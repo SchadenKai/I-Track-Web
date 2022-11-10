@@ -12,8 +12,4 @@ session_start();
 		unset($_SESSION);
 		header("Location: ../login.php");
 	}
-
-	// Include the Navigation Bar header. 
-	include "nav.html";
-
 ?>
