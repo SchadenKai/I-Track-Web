@@ -26,6 +26,7 @@ if __name__ == "__main__":
     logging.debug("Creating admin table")
     engine.execute_transaction(create_admin_query)
     logging.debug("admin table successfully created")
+ 
 
     # Insert records to admin table
     with open("setup/data/admin.csv", "r") as f:
