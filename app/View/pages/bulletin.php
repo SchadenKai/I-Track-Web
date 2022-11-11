@@ -1,7 +1,7 @@
 <?php 
 	require "../../Model/modules/validation.php";
     include "../includes/nav.php";
-    include "../includes/filterOption.php";
+    include "../includes/filterOption.html";
 ?>
 
 <!-- Change the Document Title-->

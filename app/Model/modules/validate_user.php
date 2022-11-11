@@ -26,3 +26,5 @@ if (pg_num_rows($result) == 1){
     $_SESSION['error'] = '&#128680; Incorrect Email or Password <br>';		
     header("location: ../../login.php");
 }
+
+
