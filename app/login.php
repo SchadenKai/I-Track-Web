@@ -25,7 +25,7 @@ if(isset($_SESSION['userlogin'])){
     <!-- This document uses common bootstrap classes to provide upgrades on elements with custom styles, sizing, focus states, margin, etc. -->
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="View/css/styles.css">
 
 </head>
 <body class="background-image" style="overflow: hidden; height: 100vh">
@@ -34,13 +34,13 @@ if(isset($_SESSION['userlogin'])){
 <section class=" container bg-light h-100 p-0 glassmorphism-1" style="max-width: 1000px;">
 
     <!-- heading image -->
-    <img src="/assets/images/header-img.png" class="w-100">
+    <img src="View/assets/images/header-img.png" class="w-100">
 
     <!-- logo image rounded corners -->
     <!-- position on top of other elements / position to center up 25% -->
     <div class="d-flex justify-content-center" style="margin-top:-50px; padding-top:20px">
         <!-- contain logo 100% size of the container -->
-        <img src="assets/icons/i-track-logo.png" alt="logo" class="bg-white shadow rounded-circle" style="max-width:15%; min-width:50px; z-index:1"> 
+        <img src="View/assets/icons/i-track-logo.png" alt="logo" class="bg-white shadow rounded-circle" style="max-width:15%; min-width:50px; z-index:1"> 
     </div>  
     <div class="d-flex flex-column justify-content-evenly align-items-center h-50 mt-5">
         <h1 sclass="text-center my-3">I-Track: Login</h1>
@@ -50,7 +50,7 @@ if(isset($_SESSION['userlogin'])){
                 Please Login
             </div>
             <div class="card-body text-end pt-0 w-100">
-                <form action="modules/validate_user.php" method="POST">
+                <form action="Model/modules/validate_user.php" method="POST">
                     <!-- form-label (from bootstrap) Formats label text (e.g. add bottom margin) -->
                     <!-- form-control upgrades input with custom styles, sizing, focus states -->
                     

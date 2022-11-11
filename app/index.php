@@ -1,10 +1,10 @@
 <?php 
-	require "includes/validation.php";
-    include "includes/nav.php";
-    include "includes/dashboard.php";
-    include "includes/filterOption.php";
-    include "includes/course_filterOption.php";
-    include "includes/year_filterOption.php"
+	require "Model/modules/validation.php";
+    include "View/includes/nav.php";
+    include "View/includes/dashboard.php";
+    include "View/includes/filterOption.php";
+    include "View/includes/course_filterOption.php";
+    include "View/includes/year_filterOption.php"
 ?>
 
  <!-- Change the Document Title-->
@@ -21,19 +21,19 @@
 		<!-- I-track Nav -->
         <nav class="nav nav-pills nav-fill custom-navbar">
             <li class="nav-item">
-                <a class="nav-link custom-navbar active h-100"  href="../index.php">
+                <a class="nav-link custom-navbar active h-100"  href="#">
                     <i class="bi bi-house-fill me-2"></i>
                     Home 
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/pages/bulletin.php">
+                <a class="nav-link" href="View/pages/bulletin.php">
                     <i class="bi bi-postcard me-2"></i>
                     Bulletin 
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/pages/about.php">
+                <a class="nav-link" href="View/pages/about.php">
                     <i class="bi bi-info-circle me-2"></i>
                     About 
                 </a>
@@ -112,4 +112,4 @@
     </div>
 </div>
 
-<script type="text/javascript" src="/assets/js/eventHandles.js" async></script>
+<script type="text/javascript" src="View/assets/js/eventHandles.js" async></script>

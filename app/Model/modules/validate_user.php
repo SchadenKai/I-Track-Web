@@ -20,9 +20,9 @@ if (pg_num_rows($result) == 1){
     # Add user's complete name to session variables
     $user['user_name'] = $user['first_name'] . " " . $user['last_name'];
     $_SESSION['userlogin'] = $user;
-    header("location: ../index.php");
+    header("location: ../../index.php");
 } else {
     // Else, return to login with an Error message
     $_SESSION['error'] = '&#128680; Incorrect Email or Password <br>';		
-    header("location: ../login.php");
+    header("location: ../../login.php");
 }
