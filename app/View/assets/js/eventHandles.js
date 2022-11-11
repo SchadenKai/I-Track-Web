@@ -30,3 +30,6 @@ Array.from(document.querySelectorAll('.dropdown-item'))
 /*document.addEventListener('click', function(e) { 
     console.log(e.target)
 }, false); */
+
+
+//Update class list content 
