@@ -96,5 +96,3 @@
     </div>
 </div>
 
-<script type="text/javascript" src="View/assets/js/eventHandles.js" async></script>
-<script type="text/javascript" src="View/assets/js/includeFiles.js"></script>

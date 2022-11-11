@@ -1,5 +1,5 @@
-$(document).ready(function () {
-   // Contain inline HTML template 
+export function insertTemplate_studentList() {
+    // Contain inline HTML template 
     // Insert values for class list information
     let link_path = "FirstName";
     let sr_code = "FirstName";
@@ -33,7 +33,7 @@ $(document).ready(function () {
                 last_name: last_name,
                 sr_code: sr_code,
                 middle_initial: middle_initial,
-                status: 'student_status'
+                status: student_status
             },
             {
                 link_path: link_path,
@@ -50,4 +50,6 @@ $(document).ready(function () {
     // Pass the data into template 
     let filled = student_template(data)
     $('#class_list_table').html(filled)
-});
+}
+
+

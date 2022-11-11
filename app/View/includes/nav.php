@@ -36,9 +36,10 @@
         <!-- Get Access point -->
 
         <div class="d-flex flex-column justify-content-center align-items center ms-4 text-white">            
-            <div class="fs-2 text-nowrap"><?php echo $_SESSION['userlogin']['user_name']; ?></div>
-            <div class="fw-lighter text-nowrap"><?php print_r($_SESSION['userlogin']['email']); ?></div>
-            
+
+            <div class="fs-2 text-nowrap" id="admin_fullName">{{admin_data.admin_fullName}}</div>
+            <div class="fw-lighter text-nowrap" id="admin_email">{{admin_data.admin_email}}</div>
+           
         </div>
     </div>
     <!-- Logout a Link -->
@@ -87,3 +88,6 @@
         </a>
     </li>
 </nav>
+
+<script type="text/javascript" src="View/assets/js/eventHandles.js" async></script>
+<script type="module" src="../../Controller/mainController.js" async></script>

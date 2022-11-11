@@ -12,11 +12,13 @@
                         <!-- Reference ul dropdown items -->
                         2022-2023 
                     </button>
-                    <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item yearFilter" href="#">2022-2023</a></li>
-                        <li><a class="dropdown-item yearFilter" href="#">2021-2022</a></li>
-                        <li><a class="dropdown-item yearFilter" href="#">2020-2021</a></li>
-                        <li><a class="dropdown-item yearFilter" href="#">2019-2020</a></li>
+                    <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton" id="dropDownMenu_yearFilter">
+                        {{#each classYear}}
+                        <li><a class="dropdown-item " href="#">2022-2023</a></li>
+                        <li><a class="dropdown-item " href="#">2021-2022</a></li>
+                        <li><a class="dropdown-item " href="#">2020-2021</a></li>
+                        <li><a class="dropdown-item " href="#">2019-2020</a></li>
+                        {{/each}}
                     </ul>
                 </div>
                 <p class="fw-semibold">Class</p>
@@ -26,11 +28,13 @@
                         <!-- Reference ul dropdown items -->
                         Class 1
                     </button>
-                    <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+                    <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton" id="dropDownMenu_classFilter">
+                        {{#each classPerYear}}
                         <li><a class="dropdown-item" href="#">Class 1</a></li>
                         <li><a class="dropdown-item" href="#">Class 2</a></li>
                         <li><a class="dropdown-item" href="#">Class 3</a></li>
                         <li><a class="dropdown-item" href="#">Class 4</a></li>
+                        {{/each}}
                     </ul>
                 </div>
                 
