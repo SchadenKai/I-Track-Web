@@ -11,7 +11,6 @@ if __name__ == "__main__":
     engine = CreateEngine("setup/credentials.ini", "postgresql")
     engine.connect()
 
-def main():
     ### DROP all foreign key constraints
     query = """
         ALTER TABLE IF EXISTS class DROP CONSTRAINT fk_class_admin;
