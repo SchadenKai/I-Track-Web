@@ -27,13 +27,13 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="View/pages/bulletin.php">
+                <a class="nav-link" href="pages/bulletin.php">
                     <i class="bi bi-postcard me-2"></i>
                     Bulletin 
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="View/pages/about.php">
+                <a class="nav-link" href="pages/about.php">
                     <i class="bi bi-info-circle me-2"></i>
                     About 
                 </a>
@@ -95,4 +95,5 @@
         </section>
     </div>
 </div>
-
+<script type="module" src="Controller/indexMainController.js" async></script>
+<script type="text/javascript" src="View/assets/js/eventHandles.js" async></script>

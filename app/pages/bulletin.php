@@ -1,7 +1,7 @@
 <?php 
-	require "../../Model/modules/validation.php";
-    include "../includes/nav.php";
-    include "../includes/filterOption.html";
+	require "../Model/modules/validation.php";
+    include "../View/includes/nav.php";
+    include "../View/includes/filterOption.html";
 ?>
 
 <!-- Change the Document Title-->
@@ -24,7 +24,7 @@ document.title = "I-Track | Bulletin"
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <a class="nav-link active" href="bulletin.php">
                     <i class="bi bi-postcard me-2"></i>
                     Bulletin 
                 </a>
@@ -68,4 +68,5 @@ document.title = "I-Track | Bulletin"
 		
     </div>
 </div>
-<script src="../assets/js/eventHandles.js" type="text/javascript" async></script>
+<script src="../View/assets/js/eventHandles.js" type="text/javascript" async></script>
+<script type="module" src="../Controller/otherMainController.js" async></script>

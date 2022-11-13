@@ -9,10 +9,11 @@ export function schoolYear_filter() {
     const template = "{{#each classYear}} <li><a class=\"dropdown-item yearFilter\" href=\"#\">{{this}}</a></li> {{/each}}"
     let data = {
         classYear:[
-            "2022 -2023",
-            "2021 -2022",
-            "2020 -2021",
-            "2019 -2020"
+            "2022 - 2023",
+            "2021 - 2022",
+            "2020 - 2021",
+            "2019 - 2020",
+            "2018 - 2019"
         ]
     }
     const templateFunction = Handlebars.compile(template)
@@ -28,7 +29,7 @@ export function class_filter() {
             "Class 2",
             "Class 3",
             "Class 4",
-            "Class 5"
+            "Class 5",
             ]
     }
     const templateFunction = Handlebars.compile(template)

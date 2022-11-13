@@ -1,18 +1,16 @@
 export function insertTemplate_studentList() {
     // Contain inline HTML template 
     // Insert values for class list information
-    let link_path = "FirstName";
-    let sr_code = "FirstName";
+    let sr_code = "20-07496";
     let first_name = "FirstName";
-    let last_name = "FirstName";
-    let middle_initial = "FirstName";
-    let student_status = "FirstName";
+    let last_name = "LastName";
+    let middle_initial = "A.";
+    let student_status = "Regular";
 
     // Append into array(student) to add a student
     let data = {
         student: [
             {
-                link_path: link_path,
                 first_name: first_name,
                 last_name: last_name,
                 sr_code: sr_code,
@@ -20,7 +18,6 @@ export function insertTemplate_studentList() {
                 status: student_status
             },
             {
-                link_path: link_path,
                 first_name: first_name,
                 last_name: last_name,
                 sr_code: sr_code,
@@ -28,7 +25,6 @@ export function insertTemplate_studentList() {
                 status: student_status
             },
             {
-                link_path: link_path,
                 first_name: first_name,
                 last_name: last_name,
                 sr_code: sr_code,
@@ -36,7 +32,6 @@ export function insertTemplate_studentList() {
                 status: student_status
             },
             {
-                link_path: link_path,
                 first_name: first_name,
                 last_name: last_name,
                 sr_code: sr_code,
@@ -51,5 +46,3 @@ export function insertTemplate_studentList() {
     let filled = student_template(data)
     $('#class_list_table').html(filled)
 }
-
-
