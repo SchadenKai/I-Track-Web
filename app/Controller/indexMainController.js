@@ -1,9 +1,8 @@
-import {insertTemplate_studentList} from "./includeFiles.js"
 import {adminInfo, schoolYear_filter, class_filter} from "./dynamicInfoHandles.js"
-
+import {insertTemplate_studentList} from "./insertClassList.js"
 $(document).ready(function () {
-    insertTemplate_studentList();
     adminInfo();
     schoolYear_filter();
     class_filter();
+    insertTemplate_studentList();
 });

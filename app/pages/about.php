@@ -1,6 +1,6 @@
 <?php 
-	require "../../Model/modules/validation.php";
-    include "../includes/nav.php";
+	require "../Model/modules/validation.php";
+    include "../View/includes/nav.php";
 ?>
 
 <!-- Change the Document Title-->
@@ -16,7 +16,7 @@ document.title = "I-Track | About"
 		<!-- I-track Nav -->
         <nav class="nav nav-pills nav-fill custom-navbar">
             <li class="nav-item">
-                <a class="nav-link h-100"  href="../../index.php">
+                <a class="nav-link h-100"  href="../index.php">
                     <i class="bi bi-house-fill me-2"></i>
                     Home 
                 </a>
@@ -28,7 +28,7 @@ document.title = "I-Track | About"
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <a class="nav-link active" href="about.php">
                     <i class="bi bi-info-circle me-2"></i>
                     About 
                 </a>
@@ -51,7 +51,7 @@ document.title = "I-Track | About"
         <section class="d-flex flex-row w-100" style="height:755px; background-color: #A87676"> <!-- Main Content Wrapper -->
             <article class="col-7 h-100 d-flex flex-column align-items-center justify-content-center text-light">
                 <div class="giant-text-headings w-100 mb-5 text-center">
-                    <img src="../assets/icons/target icon.png" alt="target-icon">
+                    <img src="../View/assets/icons/target icon.png" alt="target-icon">
                     I-Track in Mobile</div>
                 <div class="w-75 text-wrap lh-lg"> I-Track: A Student Progress Tracker is a mobile application 
                     built for students to track their academic performance progress. Tracking and 
@@ -86,21 +86,21 @@ document.title = "I-Track | About"
                 <div class="border-none rounded text-wrap lh-lg p-3 h-75 d-flex flex-column justify-content-evenly" style="width:95%; background-color:#A87676">
                     <div class="row justify-content-evenly">
                         <div class="card border shadow align-items-center py-1" style="background-color: #D4D4D4; width:150px;height:222px; box-sizing:content-box">
-                            <img src="../assets/icons/user-icon-placeholder.png" class="card-img-top" alt="card-img-top" style="max-width:100px">
+                            <img src="../View/assets/icons/user-icon-placeholder.png" class="card-img-top" alt="card-img-top" style="max-width:100px">
                             <div class="card-body text-center d-flex flex-column justify-content-center my-1 p-1 h-100 w-100" style="background-color:#DC3545; border-radius:20px">
                                 <p class="fw-semibold m-0">Tecson, Kairus Noah E.</p>
                                 <p class="fw-light m-0">Project Leader</p>
                             </div>
                         </div>
                         <div class="card border shadow align-items-center py-1" style="background-color: #D4D4D4; width:150px;height:222px;box-sizing:content-box">
-                            <img src="../assets/icons/user-icon-placeholder.png" class="card-img-top" alt="card-img-top" style="max-width:100px">
+                            <img src="../View/assets/icons/user-icon-placeholder.png" class="card-img-top" alt="card-img-top" style="max-width:100px">
                             <div class="card-body text-center d-flex flex-column justify-content-center my-1 p-1 h-100 w-100" style="background-color:#DC3545; border-radius:20px">
                                 <p class="fw-semibold m-0">Malibiran, Darren</p>
                                 <p class="fw-light m-0">Programmer</p>
                             </div>
                         </div>
                         <div class="card border shadow align-items-center py-1" style="background-color: #D4D4D4; width:150px;height:222px;box-sizing:content-box">
-                            <img src="../assets/icons/user-icon-placeholder.png" class="card-img-top" alt="card-img-top" style="max-width:100px">
+                            <img src="../View/assets/icons/user-icon-placeholder.png" class="card-img-top" alt="card-img-top" style="max-width:100px">
                             <div class="card-body text-center d-flex flex-column justify-content-center my-1 p-1 h-100 w-100" style="background-color:#DC3545; border-radius:20px">
                                 <p class="fw-semibold m-0">Sealquil, Nino</p>
                                 <p class="fw-lighter m-0">Analyst</p>
@@ -109,21 +109,21 @@ document.title = "I-Track | About"
                     </div>
                     <div class="row justify-content-evenly">
                         <div class="card border shadow align-items-center py-1" style="background-color: #D4D4D4; width:150px;height:222px;box-sizing:content-box">
-                            <img src="../assets/icons/user-icon-placeholder.png" class="card-img-top" alt="card-img-top" style="max-width:100px">
+                            <img src="../View/assets/icons/user-icon-placeholder.png" class="card-img-top" alt="card-img-top" style="max-width:100px">
                             <div class="card-body text-center d-flex flex-column justify-content-center my-1 p-1 h-100 w-100" style="background-color:#DC3545; border-radius:20px">
                                 <p class="fw-semibold m-0">Laqui, Jamie Rose</p>
                                 <p class="fw-light m-0">Designer</p>
                             </div>
                         </div>
                         <div class="card border shadow align-items-center py-1" style="background-color: #D4D4D4; width:150px;height:222px;box-sizing:content-box">
-                            <img src="../assets/icons/user-icon-placeholder.png" class="card-img-top" alt="card-img-top" style="max-width:100px">
+                            <img src="../View/assets/icons/user-icon-placeholder.png" class="card-img-top" alt="card-img-top" style="max-width:100px">
                             <div class="card-body text-center d-flex flex-column justify-content-center my-1 p-1 h-100 w-100" style="background-color:#DC3545; border-radius:20px">
                                 <p class="fw-semibold m-0">Militante, Zyrah</p>
                                 <p class="fw-light m-0">Designer</p>
                             </div>
                         </div>
                         <div class="card border shadow align-items-center py-1" style="background-color: #D4D4D4; width:150px;height:222px;box-sizing:content-box">
-                            <img src="../assets/icons/user-icon-placeholder.png" class="card-img-top" alt="card-img-top" style="max-width:100px">
+                            <img src="../View/assets/icons/user-icon-placeholder.png" class="card-img-top" alt="card-img-top" style="max-width:100px">
                             <div class="card-body text-center d-flex flex-column justify-content-center my-1 p-1 h-100 w-100" style="background-color:#DC3545; border-radius:20px">
                                 <p class="fw-semibold m-0">Valdez, Dominic</p>
                                 <p class="fw-light m-0">Documentation</p>
@@ -143,4 +143,5 @@ document.title = "I-Track | About"
 
     </div>
 </div>
-
+<script type="text/javascript" src="../View/assets/js/eventHandles.js" async></script>
+<script type="module" src="../Controller/otherMainController.js" async></script>

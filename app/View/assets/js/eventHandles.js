@@ -1,6 +1,5 @@
 // Enable nested modal 
 Array.from(document.getElementsByClassName('showmodal')).forEach( (e) => {
-    console.log(e);
     e.addEventListener('click', function(element) {
       element.preventDefault();
       if (e.hasAttribute('data-show-modal')) {
@@ -15,22 +14,10 @@ function showModal(modal) {
     myModal.show();
 }
 // Dynamic Filter Label
-function dynamicFilterLabel() {
-    Array.from(document.querySelectorAll('.dropdown-item'))
-  .forEach( (element) => {
-    element.addEventListener('click', (e) => {
-      const button = element.closest('.dropdown-menu').previousElementSibling
-      console.log(button);
-      console.log(e.target.textContent);
-      button.textContent = e.target.textContent
-    } )
-  } )
-}
+
 
 $(document).on('click', '.dropdown-item', function(e) {
-  const button = $('dropdown button:first-child');
-  console.log($(e.target).text());
-  console.log(button);
+  const button = $(e.target).closest('.dropdown-menu').prev();
   button.text($(e.target).text());
 })
 
