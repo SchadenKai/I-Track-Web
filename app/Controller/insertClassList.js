@@ -45,4 +45,5 @@ export function insertTemplate_studentList() {
     // Pass the data into template 
     let filled = student_template(data)
     $('#class_list_table').html(filled)
+    console.log(filled);
 }
