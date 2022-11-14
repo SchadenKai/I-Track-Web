@@ -12,6 +12,16 @@ body{
     overflow-x: hidden;
 }
 
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 80% !important;               
+    background-color:#000000;
+    height: 1px;
+    margin: 1px;
+}
+
 /* Modify Color of Nav Buttons */
 .custom-navbar, .custom-navbar a, .custom-navbar a:hover {
     background-color: #ffffff;
@@ -23,6 +33,15 @@ body{
     color: white;
     background-color:  #DC3545;
 }
+
+.custom-navbar button {
+    color: rgb(0, 0, 0) !important;
+}
+
+.cstm-rounded {
+    border-radius: 20px;
+}
+
 
 /* Background Image */
 .background-image {
@@ -148,4 +167,15 @@ a.alink-color, a {
 .cstm-card-1:hover {
     border-color: #008bf8;
     box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.cstm-card-2 {
+    border-radius: 20px;
+    background: #f5f5f5;
+    padding: 1.8rem;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
+    transition: 0.5s ease-out;
+}
+.cstm-card-2:hover {
+    box-shadow: 0 4px 18px rgba(75, 1, 1, 0.651);
 }

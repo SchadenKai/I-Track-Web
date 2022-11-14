@@ -14,8 +14,6 @@ function showModal(modal) {
     myModal.show();
 }
 // Dynamic Filter Label
-
-
 $(document).on('click', '.dropdown-item', function(e) {
   const button = $(e.target).closest('.dropdown-menu').prev();
   button.text($(e.target).text());
@@ -26,5 +24,3 @@ $(document).on('click', '.dropdown-item', function(e) {
     console.log(e.target)
 }, false); */
 
-
-//Update class list content 

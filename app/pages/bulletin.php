@@ -18,9 +18,15 @@ document.title = "I-Track | Bulletin"
 		<!-- I-track Nav -->
         <nav class="nav nav-pills nav-fill custom-navbar">
             <li class="nav-item">
-                <a class="nav-link h-100"  href="../../index.php">
+                <a class="nav-link h-100"  href="../index.php">
                     <i class="bi bi-house-fill me-2"></i>
-                    Home 
+                    Dashboard 
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link h-100"  href="students.php">
+                    <i class="bi bi-house-fill me-2"></i>
+                    Students 
                 </a>
             </li>
             <li class="nav-item">
