@@ -61,7 +61,7 @@ if __name__ == "__main__":
             interest VARCHAR(200),
             subjects_enrolled VARCHAR(1000),
             year_started INTEGER,
-            year_level VARCHAR(10),
+            year_level VARCHAR(11),
             target_gwa NUMERIC(3,2),
             attended_seminars INTEGER,
             learning_style VARCHAR(200)            
@@ -163,16 +163,28 @@ if __name__ == "__main__":
     ### Insert data to database tables
 
     # Insert records to admin table
-    with open("setup/data/admin.csv", "r") as f:
-        records = [r for r in csv.DictReader(f)]
-        for record in records:
-            # Convert id to int
-            record['id'] = int(record['id'])
-            # Encrypt with md5
-            record['password'] = hashlib.md5(record['password'].encode('utf-8')).hexdigest()
+    records = engine.read_csv("setup/data/admin.csv")    
+    for record in records:
+        # Convert id to int
+        record['id'] = int(record['id'])
+        # Encrypt with md5
+        record['password'] = hashlib.md5(record['password'].encode('utf-8')).hexdigest()
+
     logging.debug("Inserting records to admin table")
     engine.insert_rows("admin", records)
     logging.debug("All %s records inserted to admin table", len(records))
+
+    # Insert records to subject table
+    records = engine.read_csv("setup/data/subjects.csv")
+    logging.debug("Inserting records to subject table")
+    engine.insert_rows("subject", records)
+    logging.debug("All %s records inserted to subject table", len(records))
+
+    # Insert records to student table
+    records = engine.read_csv("setup/data/students.csv")
+    logging.debug("Inserting records to student table")
+    engine.insert_rows("student", records)
+    logging.debug("All %s records inserted to student table", len(records))
 
     # Close the database connection
     engine.close_connection()
