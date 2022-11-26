@@ -13,8 +13,7 @@ if __name__ == "__main__":
     ### DROP all foreign key constraints
     query = """
         ALTER TABLE IF EXISTS class DROP CONSTRAINT fk_class_admin;
-        ALTER TABLE IF EXISTS class DROP CONSTRAINT fk_class_subject;
-        ALTER TABLE IF EXISTS class DROP CONSTRAINT fk_class_student;
+        ALTER TABLE IF EXISTS class DROP CONSTRAINT fk_class_subject;        
         ALTER TABLE IF EXISTS scores DROP CONSTRAINT fk_scores_class;
         ALTER TABLE IF EXISTS bulletin DROP CONSTRAINT fk_bulletin_admin;
         ALTER TABLE IF EXISTS bulletin DROP CONSTRAINT fk_bulletin_class;
@@ -94,10 +93,9 @@ if __name__ == "__main__":
             class_id VARCHAR(8) PRIMARY KEY,
             admin_id INTEGER,
             subject_id VARCHAR(10),
-            student_id CHAR(8),
+            students TEXT,
             CONSTRAINT fk_class_admin FOREIGN KEY(admin_id) REFERENCES admin(id),
-            CONSTRAINT fk_class_subject FOREIGN KEY(subject_id) REFERENCES subject(subject_id),
-            CONSTRAINT fk_class_student FOREIGN KEY(student_id) REFERENCES student(sr_code)
+            CONSTRAINT fk_class_subject FOREIGN KEY(subject_id) REFERENCES subject(subject_id)            
         );
     """
     logging.debug("Creating class table")
@@ -179,7 +177,7 @@ if __name__ == "__main__":
     records = engine.read_csv("setup/data/subjects.csv")
     logging.debug("Inserting records to subject table")
     engine.insert_rows("subject", records)
-    logging.debug("All %s records inserted to subject table", len(records))
+    logging.debug("All %s records inserted to subject table", len(records))    
 
     # Insert records to student table
     records = engine.read_csv("setup/data/students.csv")
@@ -188,6 +186,12 @@ if __name__ == "__main__":
     logging.debug("Inserting records to student table")
     engine.insert_rows("student", records)
     logging.debug("All %s records inserted to student table", len(records))
+
+    # Insert records to class table
+    records = engine.read_csv("setup/data/class.csv")
+    logging.debug("Inserting records to class table")
+    engine.insert_rows("class", records)
+    logging.debug("All %s records inserted to class table", len(records))
 
     # Close the database connection
     engine.close_connection()
