@@ -80,7 +80,8 @@ class CreateEngine:
         tables = {
             "admin": "%(id)s, %(first_name)s, %(last_name)s, %(gender)s, %(email)s, %(password)s",
             "subject": "%(subject_id)s, %(subject_name)s, %(units)s",
-            "student": "%(sr_code)s, %(name)s, %(birthdate)s, %(gender)s, %(civil_status)s, %(scholar)s, %(working_student)s, %(activities)s, %(transportation)s, %(accommodation)s, %(characteristics)s, %(interest)s, %(subjects_enrolled)s, %(year_started)s, %(year_level)s, %(target_gwa)s, %(attended_seminars)s, %(learning_style)s"
+            "student": "%(sr_code)s, %(name)s, %(email)s, %(password)s, %(birthdate)s, %(gender)s, %(civil_status)s, %(scholar)s, %(working_student)s, %(activities)s, %(transportation)s, %(accommodation)s, %(characteristics)s, %(interest)s, %(subjects_enrolled)s, %(year_started)s, %(year_level)s, %(target_gwa)s, %(attended_seminars)s, %(learning_style)s",
+            "class": "%(class_id)s, %(admin_id)s, %(subject_id)s, %(students)s"
         }
 
         columns = tables[table_name]
@@ -95,6 +96,13 @@ class CreateEngine:
     def fetch_records(self, table_name: str):
         self.__cursor.execute(f"SELECT * FROM {table_name};")
         return self.__cursor.fetchall()
+
+    def custom_fetch(self, select_query):
+        self.__cursor.execute(select_query)
+        results = self.__cursor.fetchall()
+        if len(results) == 1:
+            return results[0]
+        return results
 
     def close_connection(self):
         """
