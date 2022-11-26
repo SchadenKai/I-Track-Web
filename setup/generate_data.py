@@ -2,6 +2,8 @@ import random
 import names
 import datetime
 import csv
+import hashlib
+from password_generator import PasswordGenerator
 
 class DataGenerator:
     def __init__(self):
@@ -144,16 +146,23 @@ class DataGenerator:
         styles = ['Visual', 'Auditory', 'Kinaesthetic / Hands-on', 'Read/Write', 'Logical / Patterns', 'Social', 'Solitary']
         return ", ".join(random.sample(styles, random.randint(2,6)))
 
+    def __generate_password(self):
+        pwo = PasswordGenerator()
+        pwo.minlen = 8
+        pwo.maxlen = 10
+        return pwo.generate()
+
     def generate_student_data(self):
         """
         Generate Student Data for student table in the project database. Refer to the ERD for the proper list and details of the attributes
         """
         # Store all student data into a list of dicitonary `student_data`
         student_data = []
-        for _ in range(100):
+        for _ in range(1000):
             # Each dictionary represent student data. Stored to `current_student`
             current_student = {}
 
+            student_sr_code = self.__get_sr_code(year_started)
             year_started = random.randint(2019, 2022)
             gender = random.choice(["male", "female"])
             year_level = self.__get_year_lvl(year_started)            
@@ -162,10 +171,12 @@ class DataGenerator:
             working_student = random.choices([True, False], [0.2, 0.8])[0]
             activities = random.choices([True, False], [0.2, 0.8])[0]
             transportation = random.choices(['Bus', 'Private Car / Taxi', 'Bicycle', 'Other'],[0.5, 0.4, 0.05, 0.05])[0]
-            accomodation = random.choices( ['Apartment', 'Dormitory', 'With Family', 'Other'],[0.3, 0.3, 0.35, 0.05])[0]
+            accomodation = random.choices( ['Apartment', 'Dormitory', 'With Family', 'Other'],[0.3, 0.3, 0.35, 0.05])[0]            
 
-            current_student['sr_code'] = self.__get_sr_code(year_started)            
+            current_student['sr_code'] = student_sr_code             
             current_student['name'] = names.get_full_name(gender = gender)
+            current_student['email'] = f"{student_sr_code}@g.batstate-u.edu.ph"
+            current_student['password'] = self.__generate_password()
             current_student['birthdate'] = self.__get_birthdate(year_level)
             current_student['gender'] = gender.title()
             current_student['civil_status'] = civil_status            
