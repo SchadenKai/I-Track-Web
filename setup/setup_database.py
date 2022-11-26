@@ -1,9 +1,8 @@
 from psql import CreateEngine
-import csv
 import logging
 import hashlib
 
-if __name__ == "__main__":
+if __name__ == "__main__":    
     # Logging config
     logging.basicConfig(format='[%(asctime)s] %(levelname)s (%(filename)s.%(funcName)s): %(message)s', level=logging.DEBUG)
 
@@ -49,6 +48,8 @@ if __name__ == "__main__":
         CREATE TABLE student(
             sr_code CHAR(8) PRIMARY KEY,
             name VARCHAR(50) NOT NULL,
+            email CHAR(28) NOT NULL, 
+            password CHAR(32) NOT NULL,
             birthdate DATE,
             gender VARCHAR(6),
             civil_status VARCHAR(7),
@@ -182,6 +183,8 @@ if __name__ == "__main__":
 
     # Insert records to student table
     records = engine.read_csv("setup/data/students.csv")
+    for record in records:
+        record['password'] = hashlib.md5(record['password'].encode('utf-8')).hexdigest()
     logging.debug("Inserting records to student table")
     engine.insert_rows("student", records)
     logging.debug("All %s records inserted to student table", len(records))
