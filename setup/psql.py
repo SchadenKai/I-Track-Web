@@ -80,7 +80,7 @@ class CreateEngine:
         tables = {
             "admin": "%(id)s, %(first_name)s, %(last_name)s, %(gender)s, %(email)s, %(password)s",
             "subject": "%(subject_id)s, %(subject_name)s, %(units)s",
-            "student": "%(sr_code)s, %(name)s, %(birthdate)s, %(gender)s, %(civil_status)s, %(scholar)s, %(working_student)s, %(activities)s, %(transportation)s, %(accommodation)s, %(characteristics)s, %(interest)s, %(subjects_enrolled)s, %(year_started)s, %(year_level)s, %(target_gwa)s, %(attended_seminars)s, %(learning_style)s"
+            "student": "%(sr_code)s, %(name)s, %(email)s, %(password)s, %(birthdate)s, %(gender)s, %(civil_status)s, %(scholar)s, %(working_student)s, %(activities)s, %(transportation)s, %(accommodation)s, %(characteristics)s, %(interest)s, %(subjects_enrolled)s, %(year_started)s, %(year_level)s, %(target_gwa)s, %(attended_seminars)s, %(learning_style)s"
         }
 
         columns = tables[table_name]
