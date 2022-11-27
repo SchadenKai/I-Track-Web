@@ -467,7 +467,7 @@ if __name__ == "__main__":
     logging.basicConfig(format='[%(asctime)s] %(levelname)s (%(filename)s.%(funcName)s): %(message)s', level=logging.DEBUG)
 
     from psql import CreateEngine
-    engine = CreateEngine("app/credentials.ini", "postgresql")
+    engine = CreateEngine("setup/credentials.ini", "postgresql")
     engine.connect()
 
     generator = DataGenerator()
