@@ -129,30 +129,6 @@ class DataGenerator:
         with open(filepath, "r", encoding = "UTF-8") as f:
             reader = csv.DictReader(f)            
             return [r for r in reader]
-
-    def __get_sr_code(self, year_started):
-        """
-        Generate Random SR Code for student
-        IMPORTANT: This is based on the date when the project is created (year 2022). 
-
-        Parameters:
-        -----------
-        year_started: int
-            Year that the student enrolled to college
-        
-        Returns:
-        -----------
-        sr_code: str
-
-        Example:
-        -----------
-        >>> print(__get_sr_code(2020))
-        20-02345
-        """
-        id = random.randint(0, 99999)
-        sr_code = f"{year_started - 2000}-{id:05d}"
-        logging.debug("Random SR Code generated %s", sr_code)
-        return sr_code
     
     def __get_year_lvl(self, year_started):
         """
@@ -312,12 +288,14 @@ class DataGenerator:
         # Store all student data into a list of dicitonary `student_data`
         self.student_data = []
         logging.debug("Generating 720 random students accross 4 years of BS in Computer Science")
-        for _ in range(720):
+        
+        all_sr_code_ids = random.sample(range(0, 99999), 720)
+        for i in range(720):
             # Each dictionary represent student data. Stored to `current_student`
             current_student = {}
 
             year_started = random.randint(2019, 2022)
-            student_sr_code = self.__get_sr_code(year_started)
+            student_sr_code = f"{year_started - 2000}-{all_sr_code_ids[i]:05d}"            
             gender = random.choice(["male", "female"])
             year_level = self.__get_year_lvl(year_started)            
             civil_status = random.choices(["Single", "Married"], [0.9, 0.1])[0]
@@ -448,7 +426,7 @@ class DataGenerator:
                         current_class["subject_id"] = subject_id
                         current_class["students"] = ", ".join(enrolled_students[index % 3])
 
-                        all_classes.append(current_class)
+                        self.all_classes.append(current_class)
 
                     # An admin can only have 2 subjects with 3 sections each handled at most. 
                     if index % 2 == 1 or index + 1 == len(subjects):
@@ -497,13 +475,8 @@ if __name__ == "__main__":
     # Logging config
     logging.basicConfig(format='[%(asctime)s] %(levelname)s (%(filename)s.%(funcName)s): %(message)s', level=logging.DEBUG)
 
-    from psql import CreateEngine
-    engine = CreateEngine("setup/credentials.ini", "postgresql")
-    engine.connect()
 
     generator = DataGenerator()
     generator.generate_student_data()
     generator.generate_subject_data()
     generator.generate_class_data()
-
-    engine.close_connection()
