@@ -3,7 +3,6 @@ import names
 import datetime
 import csv
 import logging
-import hashlib
 from password_generator import PasswordGenerator
 
 class DataGenerator:
@@ -422,7 +421,7 @@ class DataGenerator:
         """
         Generate class data for database.class table. Write the output to a local CSV file in setup/data/class.csv
         """
-        all_classes = []
+        self.all_classes = []
 
         all_admins = DataGenerator.read_csv("setup/data/admin.csv")
         int_equivalent = {"First Year": 1, "Second Year": 2, "Third Year": 3, "Fourth Year": 4}
@@ -457,10 +456,42 @@ class DataGenerator:
 
         # Write the data to CSV
         csv_filepath = "setup/data/class.csv"
-        DataGenerator.write_csv(csv_filepath, all_classes)
+        DataGenerator.write_csv(csv_filepath, self.all_classes)
         logging.info("55 classes with 3 sections each totalling to 165 records generated and written to local CSV file %s", csv_filepath)
                 
+    def generate_scores_data(self):
+        # in 1 semester(5 months: 2 exam, weekly quiz and activity. Set the attendance for class A as MTW, B as WThF, C as FSS
+        pass
 
+    def generate_bulletin_data(self):
+        """
+        Generate a simple announcement ('Hello everyone') for bulletin table. Every class_id in class table will have this announcement.
+        """
+
+        bulletin = []
+
+        # for all classes
+        for classroom in self.all_classes:
+            announcement = {
+                "content": "Hello everyone", 
+                "time_created": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"), 
+                "class_id": classroom["class_id"]
+            }
+            bulletin.append(announcement)
+        
+        # Write the data to CSV
+        csv_filepath = "setup/data/bulletin.csv"
+        DataGenerator.write_csv(csv_filepath, bulletin)
+        logging.info("%s announcements for bulletin table generated and written to local CSV file %s", len(bulletin), csv_filepath)
+
+
+    def generate_health_index_data(self):
+        # for student in all students:
+        # has chronic? injured? admitted?
+        # for day in days na may pasok:
+        # mood and health index. is currently ill?
+        pass
+    
 
 if __name__ == "__main__":
     # Logging config
