@@ -14,8 +14,7 @@ if __name__ == "__main__":
     query = """
         ALTER TABLE IF EXISTS class DROP CONSTRAINT fk_class_admin;
         ALTER TABLE IF EXISTS class DROP CONSTRAINT fk_class_subject;        
-        ALTER TABLE IF EXISTS scores DROP CONSTRAINT fk_scores_class;
-        ALTER TABLE IF EXISTS bulletin DROP CONSTRAINT fk_bulletin_admin;
+        ALTER TABLE IF EXISTS scores DROP CONSTRAINT fk_scores_class;        
         ALTER TABLE IF EXISTS bulletin DROP CONSTRAINT fk_bulletin_class;
         ALTER TABLE IF EXISTS health_index DROP CONSTRAINT fk_health_student;
     """
@@ -126,10 +125,8 @@ if __name__ == "__main__":
         post_id SERIAL PRIMARY KEY,
         content TEXT,
         attachment_url TEXT,
-        time_created TIMESTAMP,
-        admin_id INTEGER,
-        class_id VARCHAR(8),
-        CONSTRAINT fk_bulletin_admin FOREIGN KEY(admin_id) REFERENCES admin(id),
+        time_created TIMESTAMP,        
+        class_id VARCHAR(8),        
         CONSTRAINT fk_bulletin_class FOREIGN KEY(class_id) REFERENCES class(class_id)        
     );
     """
