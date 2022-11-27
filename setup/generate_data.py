@@ -410,9 +410,11 @@ class DataGenerator:
         return (a[i*k+min(i, m):(i+1)*k+min(i+1, m)] for i in range(n))
 
     def __fetch_class_student(self, subject_id):
-        
-        students = engine.custom_fetch(f"SELECT string_agg(sr_code, ', ') FROM student where subjects_enrolled LIKE \'%{subject_id}%\'")[0]        
-        logging.debug("Found %s students enrolled to %s subject.", len(students.split(", ")) + 1, subject_id)
+        """
+        Based on self.student_data, find the students enrolled in a given subject. Split the list into 3 approximately equal parts to separate them to sections A,B,C
+        """
+        students = [i["sr_code"] for i in self.student_data if subject_id in i['subjects_enrolled']]
+        logging.debug("Found %s students enrolled to %s subject.", len(students) + 1, subject_id)
         return list(self.__split_list(students, 3))
 
 
@@ -445,7 +447,7 @@ class DataGenerator:
                         current_class["class_id"] = f"{class_id_template}{section}"                        
                         current_class["admin_id"] = current_admin["id"]                        
                         current_class["subject_id"] = subject_id
-                        current_class["students"] = enrolled_students[index % 3]                        
+                        current_class["students"] = ", ".join(enrolled_students[index % 3])
 
                         all_classes.append(current_class)
 
@@ -465,7 +467,7 @@ if __name__ == "__main__":
     logging.basicConfig(format='[%(asctime)s] %(levelname)s (%(filename)s.%(funcName)s): %(message)s', level=logging.DEBUG)
 
     from psql import CreateEngine
-    engine = CreateEngine("setup/credentials.ini", "postgresql")
+    engine = CreateEngine("app/credentials.ini", "postgresql")
     engine.connect()
 
     generator = DataGenerator()

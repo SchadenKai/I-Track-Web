@@ -1,3 +1,4 @@
 credentials.ini
 setup/venv
 setup/__pycache__/
+setup/data/*.csv
