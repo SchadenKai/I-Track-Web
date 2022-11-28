@@ -95,6 +95,10 @@ class CreateEngine:
                 "columns": "class_id, admin_id, subject_id, semester, students",
                 "values": "%(class_id)s, %(admin_id)s, %(subject_id)s, %(semester)s, %(students)s"
                 },            
+            "scores": {
+                "columns": "student_id, category, score, overall_score, timestamp, class_id",
+                "values": "%(student_id)s, %(category)s, %(score)s, %(overall_score)s, %(timestamp)s, %(class_id)s"
+                },            
             "bulletin": {
                 "columns": "content, attachment_url, time_created, class_id",
                 "values": "%(content)s, %(attachment_url)s, %(time_created)s, %(class_id)s"
