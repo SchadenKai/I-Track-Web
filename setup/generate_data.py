@@ -4,6 +4,7 @@ import datetime
 import csv
 import logging
 from password_generator import PasswordGenerator
+from scipy.stats import skewnorm
 
 class DataGenerator:
     def __init__(self):
@@ -460,10 +461,64 @@ class DataGenerator:
         csv_filepath = "setup/data/class.csv"
         DataGenerator.write_csv(csv_filepath, self.all_classes)
         logging.info("55 classes with 3 sections each totalling to 165 records generated and written to local CSV file %s", csv_filepath)
-                
+
+    def __generate_category_list(self, start_week):
+        categories = {}
+        for first_half, second_half in zip(range(start_week, start_week + 8), range(start_week + 9, start_week + 17)):
+            categories[first_half] = random.choice(["quiz", "activity"])
+            categories[second_half] = random.choice(["quiz", "activity"])
+        categories[start_week + 8] = "exam"
+        categories[start_week + 17] = "exam"
+
+        return categories
+
+
     def generate_scores_data(self):
-       
-        pass
+        category_max_score_ranges = {
+            "exam": (40, 70),
+            "quiz": (10, 45),
+            "activity": (50, 100)
+        }
+        scores_data = []
+        for classroom in self.all_classes:
+            start_week = self.semester_starting_week[classroom["semester"]]
+            categories = self.__generate_category_list(start_week)
+            categories = dict(sorted(categories.items()))
+            # Get the days the student from the class should attend. 
+            schedule = self.days_of_class[classroom["class_id"][-1]]
+            for week_number, category in categories.items():
+                students = classroom["students"].split(", ")
+                # Generate the score data for all students in this classroom         
+                random_day_of_week = datetime.datetime.strptime(f"2022-W{week_number}-{random.choice(schedule)}", "%G-W%V-%u").strftime("%Y-%m-%d %H:%M")
+                
+                # Random total score that is a multiple of 5
+                total_score = random.randint(*category_max_score_ranges[category]) // 5 * 5
+
+                # Generate negatively skewed score distribution for a given activity/quiz/exam
+                skewness = -4
+                amount_of_values = len(students)
+                random_percentages = skewnorm.rvs(a = skewness, loc = 100, size = amount_of_values)
+                random_percentages = random_percentages - min(random_percentages) * (random.randrange(95, 100) / 100)
+                random_percentages = random_percentages / max(random_percentages) 
+
+                # Multiply the percentages to total score of the output
+                class_score = [int(i) for i in random_percentages*total_score]
+                logging.debug("Generating scores out of %s for %s output @%s in class %s", total_score, category, random_day_of_week, classroom["class_id"])
+                for i in range(len(students)):
+                    student_score = {
+                        "student_id": students[i],
+                        "category": category,
+                        "score": class_score[i],
+                        "overall_score": total_score,
+                        "timestamp": random_day_of_week, 
+                        "class_id": classroom["class_id"]
+                    }
+                    scores_data.append(student_score)
+
+        # Write the data to CSV
+        csv_filepath = "setup/data/scores.csv"
+        DataGenerator.write_csv(csv_filepath, scores_data)
+        logging.info("%s dummy data for scores table generated and written to local CSV file %s", len(scores_data), csv_filepath)
 
     def generate_bulletin_data(self):
         """
@@ -503,7 +558,7 @@ class DataGenerator:
             for student in classroom["students"].split(", "):       
                 # Health in the normal class days
                 for week_number in range(start_week, start_week + 17):
-                    for day_of_week in schedule:                        
+                    for day_of_week in schedule[:2]:                        
                         current_date_health = {
                             "student_id": student,
                             "has_chronic_disease": random.choices([True, False], [0.005, 0.995])[0],
@@ -516,7 +571,7 @@ class DataGenerator:
                         }
 
                         health_indexes.append(current_date_health)
-                    logging.debug("Generated 3 health indexes input for %s in ISO week number %s", student, week_number)
+                    logging.debug("Generated 2 health indexes input for %s in ISO week number %s", student, week_number)
 
         # Write the data to CSV
         csv_filepath = "setup/data/health_index.csv"
@@ -532,5 +587,6 @@ if __name__ == "__main__":
     generator.generate_student_data()
     generator.generate_subject_data()
     generator.generate_class_data()
+    generator.generate_scores_data()
     generator.generate_bulletin_data()
     generator.generate_health_index_data()
