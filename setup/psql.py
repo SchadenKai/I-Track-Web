@@ -77,20 +77,44 @@ class CreateEngine:
         - None
         """
 
+
         tables = {
-            "admin": "%(id)s, %(first_name)s, %(last_name)s, %(gender)s, %(email)s, %(password)s",
-            "subject": "%(subject_id)s, %(subject_name)s, %(units)s",
-            "student": "%(sr_code)s, %(name)s, %(email)s, %(password)s, %(birthdate)s, %(gender)s, %(civil_status)s, %(scholar)s, %(working_student)s, %(activities)s, %(transportation)s, %(accommodation)s, %(characteristics)s, %(interest)s, %(subjects_enrolled)s, %(year_started)s, %(year_level)s, %(target_gwa)s, %(attended_seminars)s, %(learning_style)s",
-            "class": "%(class_id)s, %(admin_id)s, %(subject_id)s, %(students)s"
+            "admin": {
+                "columns": 'id, first_name, last_name, gender, email, password', 
+                "values": "%(id)s, %(first_name)s, %(last_name)s, %(gender)s, %(email)s, %(password)s"
+                },
+            "subject": {
+                "columns": "subject_id, subject_name, units",
+                "values": "%(subject_id)s, %(subject_name)s, %(units)s"
+                },
+            "student": {
+                "columns": "sr_code, name, email, password, birthdate, gender, civil_status, scholar, working_student, activities, transportation, accomodation, characteristics, interest, subjects_enrolled, year_started, year_level, target_gwa, attended_seminars, learning_style",
+                "values": "%(sr_code)s, %(name)s, %(email)s, %(password)s, %(birthdate)s, %(gender)s, %(civil_status)s, %(scholar)s, %(working_student)s, %(activities)s, %(transportation)s, %(accommodation)s, %(characteristics)s, %(interest)s, %(subjects_enrolled)s, %(year_started)s, %(year_level)s, %(target_gwa)s, %(attended_seminars)s, %(learning_style)s"
+                },
+            "class": {
+                "columns": "class_id, admin_id, subject_id, semester, students",
+                "values": "%(class_id)s, %(admin_id)s, %(subject_id)s, %(semester)s, %(students)s"
+                },            
+            "bulletin": {
+                "columns": "content, attachment_url, time_created, class_id",
+                "values": "%(content)s, %(attachment_url)s, %(time_created)s, %(class_id)s"
+                },
+            "health_index": {
+                "columns": "student_id, has_chronic_disease, currently_ill, admitted_to_hospital, injured, mood, health_condition, date",
+                "values": "%(student_id)s, %(has_chronic_disease)s, %(currently_ill)s, %(admitted_to_hospital)s, %(injured)s, %(mood)s, %(health_condition)s, %(date)s",
+                }
         }
 
-        columns = tables[table_name]
+   
 
-        # Chunk insert - Insert at most 1000 records at a time
-        for i in range(0, len(records), 1000):
-            chunk_data = records[i:i+1000]
-            crunched_records = b','.join(self.__cursor.mogrify(f"({columns})", record) for record in chunk_data)
-            self.execute_transaction(f"INSERT INTO {table_name} VALUES {crunched_records.decode()}")
+        values = tables[table_name]["values"]
+        columns = tables[table_name]["columns"]
+
+        # Chunk insert - Insert at most 50000 records at a time
+        for i in range(0, len(records), 50000):
+            chunk_data = records[i:i+50000]
+            crunched_records = b','.join(self.__cursor.mogrify(f"({values})", record) for record in chunk_data)
+            self.execute_transaction(f"INSERT INTO {table_name}({columns}) VALUES {crunched_records.decode()}")
             logging.debug("Inserted %s rows to %s table", len(chunk_data), table_name)
 
     def fetch_records(self, table_name: str):
