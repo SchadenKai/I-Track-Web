@@ -12,11 +12,12 @@ if __name__ == "__main__":
 
     ### DROP all foreign key constraints
     query = """
-        ALTER TABLE IF EXISTS class DROP CONSTRAINT fk_class_admin;
-        ALTER TABLE IF EXISTS class DROP CONSTRAINT fk_class_subject;        
-        ALTER TABLE IF EXISTS scores DROP CONSTRAINT fk_scores_class;        
-        ALTER TABLE IF EXISTS bulletin DROP CONSTRAINT fk_bulletin_class;
-        ALTER TABLE IF EXISTS health_index DROP CONSTRAINT fk_health_student;
+        ALTER TABLE IF EXISTS class DROP CONSTRAINT IF EXISTS fk_class_admin;
+        ALTER TABLE IF EXISTS class DROP CONSTRAINT IF EXISTS fk_class_subject;        
+        ALTER TABLE IF EXISTS scores DROP CONSTRAINT IF EXISTS fk_scores_class;        
+        ALTER TABLE IF EXISTS scores DROP CONSTRAINT IF EXISTS fk_scores_student;                
+        ALTER TABLE IF EXISTS bulletin DROP CONSTRAINT IF EXISTS fk_bulletin_class;
+        ALTER TABLE IF EXISTS health_index DROP CONSTRAINT IF EXISTS fk_health_student;
     """
     logging.debug("Dropping foreign key constraints")
     engine.execute_transaction(query)
@@ -107,12 +108,14 @@ if __name__ == "__main__":
     DROP TABLE IF EXISTS scores;
     CREATE TABLE scores(
         output_id SERIAL PRIMARY KEY,
+        student_id CHAR(8),
         category VARCHAR(8),
         score INTEGER,
         overall_score INTEGER,
         timestamp timestamp,
         class_id VARCHAR(8),
-        CONSTRAINT fk_scores_class FOREIGN KEY(class_id) REFERENCES class(class_id)
+        CONSTRAINT fk_scores_class FOREIGN KEY(class_id) REFERENCES class(class_id),
+        CONSTRAINT fk_scores_student FOREIGN KEY(student_id) REFERENCES student(sr_code)
     );
     """
     logging.debug("Creating scores table")
@@ -191,6 +194,12 @@ if __name__ == "__main__":
     engine.insert_rows("class", records)
     logging.debug("All %s records inserted to class table", len(records))
 
+    # Insert records to scores table
+    records = engine.read_csv("setup/data/scores.csv")
+    logging.debug("Inserting records to scores table")
+    engine.insert_rows("scores", records)
+    logging.debug("All %s records inserted to scores table", len(records))
+
     # Insert records to bulletin table
     records = engine.read_csv("setup/data/bulletin.csv")
     logging.debug("Inserting records to bulletin table")
@@ -201,7 +210,7 @@ if __name__ == "__main__":
     records = engine.read_csv("setup/data/health_index.csv")
     logging.debug("Inserting records to health_index table")
     engine.insert_rows("health_index", records)
-    logging.debug("All %s records inserted to health_index table", len(records))
+    logging.debug("All %s records inserted to health_index table", len(records))    
 
     # Close the database connection
     engine.close_connection()
