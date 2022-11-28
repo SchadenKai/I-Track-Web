@@ -92,6 +92,7 @@ if __name__ == "__main__":
             class_id VARCHAR(8) PRIMARY KEY,
             admin_id INTEGER,
             subject_id VARCHAR(10),
+            semester INTEGER,
             students TEXT,
             CONSTRAINT fk_class_admin FOREIGN KEY(admin_id) REFERENCES admin(id),
             CONSTRAINT fk_class_subject FOREIGN KEY(subject_id) REFERENCES subject(subject_id)            
@@ -189,6 +190,18 @@ if __name__ == "__main__":
     logging.debug("Inserting records to class table")
     engine.insert_rows("class", records)
     logging.debug("All %s records inserted to class table", len(records))
+
+    # Insert records to bulletin table
+    records = engine.read_csv("setup/data/bulletin.csv")
+    logging.debug("Inserting records to bulletin table")
+    engine.insert_rows("bulletin", records)
+    logging.debug("All %s records inserted to bulletin table", len(records))
+
+    # Insert records to health_index table
+    records = engine.read_csv("setup/data/health_index.csv")
+    logging.debug("Inserting records to health_index table")
+    engine.insert_rows("health_index", records)
+    logging.debug("All %s records inserted to health_index table", len(records))
 
     # Close the database connection
     engine.close_connection()
