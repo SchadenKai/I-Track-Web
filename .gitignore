@@ -1,4 +1,9 @@
 credentials.ini
 setup/venv
 setup/__pycache__/
-setup/data/*.csv
+setup/data/class.csv
+setup/data/subjects.csv
+setup/data/students.csv
+setup/data/scores.csv
+setup/data/bulletin.csv
+setup/data/health_index.csv

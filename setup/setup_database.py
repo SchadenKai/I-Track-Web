@@ -14,8 +14,7 @@ if __name__ == "__main__":
     query = """
         ALTER TABLE IF EXISTS class DROP CONSTRAINT fk_class_admin;
         ALTER TABLE IF EXISTS class DROP CONSTRAINT fk_class_subject;        
-        ALTER TABLE IF EXISTS scores DROP CONSTRAINT fk_scores_class;
-        ALTER TABLE IF EXISTS bulletin DROP CONSTRAINT fk_bulletin_admin;
+        ALTER TABLE IF EXISTS scores DROP CONSTRAINT fk_scores_class;        
         ALTER TABLE IF EXISTS bulletin DROP CONSTRAINT fk_bulletin_class;
         ALTER TABLE IF EXISTS health_index DROP CONSTRAINT fk_health_student;
     """
@@ -93,6 +92,7 @@ if __name__ == "__main__":
             class_id VARCHAR(8) PRIMARY KEY,
             admin_id INTEGER,
             subject_id VARCHAR(10),
+            semester INTEGER,
             students TEXT,
             CONSTRAINT fk_class_admin FOREIGN KEY(admin_id) REFERENCES admin(id),
             CONSTRAINT fk_class_subject FOREIGN KEY(subject_id) REFERENCES subject(subject_id)            
@@ -126,10 +126,8 @@ if __name__ == "__main__":
         post_id SERIAL PRIMARY KEY,
         content TEXT,
         attachment_url TEXT,
-        time_created TIMESTAMP,
-        admin_id INTEGER,
-        class_id VARCHAR(8),
-        CONSTRAINT fk_bulletin_admin FOREIGN KEY(admin_id) REFERENCES admin(id),
+        time_created TIMESTAMP,        
+        class_id VARCHAR(8),        
         CONSTRAINT fk_bulletin_class FOREIGN KEY(class_id) REFERENCES class(class_id)        
     );
     """
@@ -192,6 +190,18 @@ if __name__ == "__main__":
     logging.debug("Inserting records to class table")
     engine.insert_rows("class", records)
     logging.debug("All %s records inserted to class table", len(records))
+
+    # Insert records to bulletin table
+    records = engine.read_csv("setup/data/bulletin.csv")
+    logging.debug("Inserting records to bulletin table")
+    engine.insert_rows("bulletin", records)
+    logging.debug("All %s records inserted to bulletin table", len(records))
+
+    # Insert records to health_index table
+    records = engine.read_csv("setup/data/health_index.csv")
+    logging.debug("Inserting records to health_index table")
+    engine.insert_rows("health_index", records)
+    logging.debug("All %s records inserted to health_index table", len(records))
 
     # Close the database connection
     engine.close_connection()

@@ -3,11 +3,24 @@ import names
 import datetime
 import csv
 import logging
-import hashlib
 from password_generator import PasswordGenerator
 
 class DataGenerator:
     def __init__(self):
+         # in 1 semester(5 months: 2 exam, weekly quiz and activity. Set the attendance for class A as MTW, B as WThF, C as FSS
+        # Semester 2 starts in week 4 (end of Jan). Semester 1 in week 31 (start of Aug)
+        self.semester_starting_week = {
+            1: 31,
+            2: 4                    
+        }
+
+        # What day of week should a student attend? Those from class A attends day 1,2,3
+        self.days_of_class = {
+            "A": [1,2,3],
+            "B": [3,4,5],
+            "C": [5,6,7]
+        }
+
          # Computer Science curriculum
         self.curriculum = {
             "First Year": {
@@ -130,30 +143,6 @@ class DataGenerator:
         with open(filepath, "r", encoding = "UTF-8") as f:
             reader = csv.DictReader(f)            
             return [r for r in reader]
-
-    def __get_sr_code(self, year_started):
-        """
-        Generate Random SR Code for student
-        IMPORTANT: This is based on the date when the project is created (year 2022). 
-
-        Parameters:
-        -----------
-        year_started: int
-            Year that the student enrolled to college
-        
-        Returns:
-        -----------
-        sr_code: str
-
-        Example:
-        -----------
-        >>> print(__get_sr_code(2020))
-        20-02345
-        """
-        id = random.randint(0, 99999)
-        sr_code = f"{year_started - 2000}-{id:05d}"
-        logging.debug("Random SR Code generated %s", sr_code)
-        return sr_code
     
     def __get_year_lvl(self, year_started):
         """
@@ -313,12 +302,14 @@ class DataGenerator:
         # Store all student data into a list of dicitonary `student_data`
         self.student_data = []
         logging.debug("Generating 720 random students accross 4 years of BS in Computer Science")
-        for _ in range(720):
+        
+        all_sr_code_ids = random.sample(range(0, 99999), 720)
+        for i in range(720):
             # Each dictionary represent student data. Stored to `current_student`
             current_student = {}
 
             year_started = random.randint(2019, 2022)
-            student_sr_code = self.__get_sr_code(year_started)
+            student_sr_code = f"{year_started - 2000}-{all_sr_code_ids[i]:05d}"            
             gender = random.choice(["male", "female"])
             year_level = self.__get_year_lvl(year_started)            
             civil_status = random.choices(["Single", "Married"], [0.9, 0.1])[0]
@@ -374,12 +365,14 @@ class DataGenerator:
         logging.info("%s subject data based on Batangas State University's Computer Science curriculum written to %s", len(all_subjects), csv_filepath)
 
 
-    def __generate_class_id_template(self, units, year, semester, subject_number):
+    def __generate_class_id_template(self, subject_id, units, year, semester, subject_number):
         """
         Generate class id using the parameters above. 
 
         Parameters:
         -----------
+            subject_id: str
+                Id of a subject based on CS curriculum
             units: int
                 Number of units [2-3] for that subject
             year: int
@@ -398,7 +391,11 @@ class DataGenerator:
         -----------
         For example, "Understanding the Self" is the 4th subject in 1st year 2nd Semester of CS Curriculum. Its class_id template would be "CS 114"
         """
-        class_id_template = f'{["GED", "CS"][units - 2]} {year}{semester}{subject_number}'
+        if units == 2 or "GEd" in subject_id:
+            subject_classification = "GED"
+        else:
+            subject_classification = "CS"
+        class_id_template = f'{subject_classification} {year}{semester}{subject_number}'
         logging.debug("Random class_id_template template generated, %s", class_id_template)
         return class_id_template
 
@@ -422,57 +419,118 @@ class DataGenerator:
         """
         Generate class data for database.class table. Write the output to a local CSV file in setup/data/class.csv
         """
-        all_classes = []
+        self.all_classes = []
 
         all_admins = DataGenerator.read_csv("setup/data/admin.csv")
         int_equivalent = {"First Year": 1, "Second Year": 2, "Third Year": 3, "Fourth Year": 4}
         
         # Loop over the CS curriculum. Declared in __init__
+        admin_index = 0         
         for year, items in self.curriculum.items():
             # Get the numerical equivalent of current year
             year_number = int_equivalent[year]                        
             for semester, subjects in items.items(): 
-                # Loop over the subjects over the list               
+                # Loop over the subjects over the list    
+                  
                 for index, subject in enumerate(subjects):    
-                    class_id_template = self.__generate_class_id_template(subject["units"], year_number, semester, index + 1)
-                    # Grab the admin for this subject
-                    current_admin = all_admins[0]
                     subject_id = subject["subject_id"]
+                    class_id_template = self.__generate_class_id_template(subject_id, subject["units"], year_number, semester, index + 1)
+                    # Grab the admin for this subject
+                    current_admin = all_admins[admin_index]                    
                     enrolled_students = self.__fetch_class_student(subject_id)
                     
                     # Assuming there are 3 sections per year, it is only proper to create 3 classes for that specific subject
-                    for index, section in enumerate(["A", "B", "C"]):           
+                    for section_number, section in enumerate(["A", "B", "C"]):           
                         current_class = {}               
 
                         current_class["class_id"] = f"{class_id_template}{section}"                        
                         current_class["admin_id"] = current_admin["id"]                        
                         current_class["subject_id"] = subject_id
-                        current_class["students"] = ", ".join(enrolled_students[index % 3])
+                        current_class["semester"] = int(semester)
+                        current_class["students"] = ", ".join(enrolled_students[section_number % 3])
 
-                        all_classes.append(current_class)
+                        self.all_classes.append(current_class)
 
                     # An admin can only have 2 subjects with 3 sections each handled at most. 
+                    logging.info("Admin %s assigned to 3 classes for %s subject", current_admin, subject_id)
                     if index % 2 == 1 or index + 1 == len(subjects):
-                        del all_admins[0]
+                        admin_index += 1
 
         # Write the data to CSV
         csv_filepath = "setup/data/class.csv"
-        DataGenerator.write_csv(csv_filepath, all_classes)
+        DataGenerator.write_csv(csv_filepath, self.all_classes)
         logging.info("55 classes with 3 sections each totalling to 165 records generated and written to local CSV file %s", csv_filepath)
                 
+    def generate_scores_data(self):
+       
+        pass
 
+    def generate_bulletin_data(self):
+        """
+        Generate a simple announcement ('Hello everyone') for bulletin table. Every class_id in class table will have this announcement.
+        """
+
+        bulletin = []
+
+        # for all classes
+        for classroom in self.all_classes:
+            announcement = {
+                "content": "Hello everyone", 
+                "attachment_url": None,
+                "time_created": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"), 
+                "class_id": classroom["class_id"]
+            }
+            bulletin.append(announcement)
+        
+        # Write the data to CSV
+        csv_filepath = "setup/data/bulletin.csv"
+        DataGenerator.write_csv(csv_filepath, bulletin)
+        logging.info("%s announcements for bulletin table generated and written to local CSV file %s", len(bulletin), csv_filepath)
+
+
+    def generate_health_index_data(self):
+        health_indexes = []
+        
+        
+        # I think I can change the loop to use class.students instead. This way I can also get the class_id and determine if student is in section A,B, or C.
+        for classroom in self.all_classes:
+            # Get the week the student should attend based on their enrolled semester
+            start_week = self.semester_starting_week[classroom["semester"]]
+            # Get the days the student from the class should attend. 
+            schedule = self.days_of_class[classroom["class_id"][-1]]
+
+            # Generate the health data for all students in this classroom
+            for student in classroom["students"].split(", "):       
+                # Health in the normal class days
+                for week_number in range(start_week, start_week + 17):
+                    for day_of_week in schedule:                        
+                        current_date_health = {
+                            "student_id": student,
+                            "has_chronic_disease": random.choices([True, False], [0.005, 0.995])[0],
+                            "currently_ill": random.choices([True, False], [0.05, 0.95])[0],
+                            "admitted_to_hospital": random.choices([True, False], [0.005, 0.995])[0],
+                            "injured": random.choices([True, False], [0.005, 0.995])[0],
+                            "mood": random.choices(list(range(0,101,25)), [0.1, 0.2, 0.3, 0.2, 0.2])[0],
+                            "health_condition": random.choices(list(range(0,101,25)), [0.05, 0.1, 0.2, 0.3, 0.35])[0],
+                            "date": datetime.datetime.strptime(f"2022-W{week_number}-{day_of_week}", "%G-W%V-%u").strftime("%Y-%m-%d")
+                        }
+
+                        health_indexes.append(current_date_health)
+                    logging.debug("Generated 3 health indexes input for %s in ISO week number %s", student, week_number)
+
+        # Write the data to CSV
+        csv_filepath = "setup/data/health_index.csv"
+        DataGenerator.write_csv(csv_filepath, health_indexes)
+        logging.info("%s records of health index generated and written to local CSV file %s", len(health_indexes), csv_filepath)
 
 if __name__ == "__main__":
     # Logging config
     logging.basicConfig(format='[%(asctime)s] %(levelname)s (%(filename)s.%(funcName)s): %(message)s', level=logging.DEBUG)
 
-    from psql import CreateEngine
-    engine = CreateEngine("setup/credentials.ini", "postgresql")
-    engine.connect()
 
     generator = DataGenerator()
     generator.generate_student_data()
     generator.generate_subject_data()
     generator.generate_class_data()
-
-    engine.close_connection()
+    generator.generate_bulletin_data()
+    generator.generate_health_index_data()
