@@ -59,9 +59,9 @@ class CreateEngine:
         """
         Execute SQL transactions (Create, Update, Delete, etc.)
         """
-        with self.__conn as conn:
-            with conn.cursor() as cursor:
-                cursor.execute(query)        
+        self.__cursor.execute("BEGIN")
+        self.__cursor.execute(query)  
+        self.__cursor.execute("COMMIT")      
     
     def insert_rows(self, table_name, records):
         """
