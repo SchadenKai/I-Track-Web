@@ -215,7 +215,7 @@ if __name__ == "__main__":
     # Add grades to students based on their outputs
     query = """
     ALTER TABLE student ADD column grade numeric(5,2);
-    WITH student_grades AS (SELECT student_id, ROUND(AVG(score::decimal/overall_score), 2) as n FROM scores GROUP BY student_id) UPDATE student SET grade = sg.n FROM student_grades AS sg WHERE sr_code = sg.student_id;
+    WITH student_grades AS (SELECT student_id, ROUND(AVG(score::decimal/overall_score) * 100, 2) as n FROM scores GROUP BY student_id) UPDATE student SET grade = sg.n FROM student_grades AS sg WHERE sr_code = sg.student_id;
     """
     logging.debug("Computing grades for students")
     engine.execute_transaction(query)
