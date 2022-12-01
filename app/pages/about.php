@@ -43,8 +43,7 @@ document.title = "I-Track | About"
 
         <section class="d-flex flex-row p-3 bg-white w-100" style="height:755px"> <!-- Main Content Wrapper -->
             <aside class="col-4 h-100 d-flex flex-column justify-content-center">
-                <div class="h-25 i-track-icon-rounded mb-5"></div>
-                <div class="h-25 vector-cartoon-graph"></div>
+            <div class="h-100 website-showcase ms-5"></div>
             </aside>
             <article class="col-8 h-100 d-flex flex-column align-items-center justify-content-center">
                 <div class="giant-text-headings w-100 mb-3 text-center">Easily track student’s academic performance</div>
@@ -59,32 +58,65 @@ document.title = "I-Track | About"
                 <div class="giant-text-headings w-100 mb-5 text-center">
                     <img src="../View/assets/icons/target icon.png" alt="target-icon">
                     I-Track in Mobile</div>
-                <div class="w-75 text-wrap lh-lg"> I-Track: A Student Progress Tracker is a mobile application 
-                    built for students to track their academic performance progress. Tracking and 
-                    monitoring current student performance are essential in giving information 
-                    that can be used to help students make decisions that will improve their progress. 
-                    This would not only allow students to take ownership of their learning but would also 
-                    allow them to track their growth over time.</div>
+                <div class="w-75 text-wrap lh-lg"> A Student Progress Tracker is built for students to track their academic performance, well-being and health index by utilizing in-app productivity features; self-tracking in terms of performance, psychological factors - promoting student well-being, and health index - determining the factors that may affect the student’s performance. Also, productivity mobile application include features like To Do, Calendar and Announcement to be updated and be reminded of the activities to be accomplished.
+</div>
             </article>
             <aside class="col-5 h-100 d-flex flex-column justify-content-center">
                 <div class="h-100 i-track-mobile-showcase"></div>
             </aside>
         </section>
-        <section class="d-flex flex-row w-100 background-image" style="height:755px;"> <!-- Main Content Wrapper -->
-            <aside class="col-5 h-100 d-flex flex-column justify-content-center">
-                <div class="h-100 website-showcase"></div>
-            </aside>    
-            <article class="col-7 h-100 d-flex flex-column align-items-center justify-content-center text-light">
-                <div class="giant-text-headings w-100 mb-5 text-center">
-                    I-Track Website Server</div>
-                <div class="boder rounded text-wrap lh-lg p-3 me-5" style="background-color:#A87676; width:80%;"> I-Track: A Student Progress Tracker is a mobile application 
-                    built for students to track their academic performance progress. Tracking and 
-                    monitoring current student performance are essential in giving information 
-                    that can be used to help students make decisions that will improve their progress. 
-                    This would not only allow students to take ownership of their learning but would also 
-                    allow them to track their growth over time.</div>
-            </article>
-        </section>
+       
+        <section class="bg-white pt-5 pb-5 shadow-sm"><!-- Main Content Wrapper -->
+  <div class="container">
+    <div class="row pt-0 pb-5">
+      <div class="col-12">
+        <h1 class="text-center text-danger border-bottom mb-4">What We Offer</h1>
+      </div>
+    </div>
+    <div class="row">
+      
+      <div class="col-lg-4 mb-3 d-flex align-items-stretch">
+        <div class="card border-0 ms-5" style="width:15rem;">
+           <img src="../View/assets/icons/no_of_students-icon.png" style="max-width:20%" class="card-img-top m-3" alt="No of Students"> 
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title text-danger">Academic Progress Tracker</h5>
+            <p class="card-text text-justify mb-4">Record students scores and grades for the current semester in the productivity app, where graphs regarding the received data will be shown both on the web and mobile, together with the expected general weighted average.
+</p>
+
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 mb-3 d-flex align-items-stretch">
+        <div class="card border-0 bg-danger ms-5" style="width:15rem;">
+           <img src="../View/assets/icons/psy.png" style="max-width:20%" class="card-img-top m-3" alt="Card Psychology">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title text-black">Well-being Tracker
+</h5>
+            <p class="card-text text-white mb-4">Mobile application's feature concerning the students' well-being, where students will be given set of questions with a scale of 1-5 to answer. This will help promote the student’s well being and let them be aware of their psychological status.</p>
+
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 mb-3 d-flex align-items-stretch">
+        <div class="card border-0 ms-5" style="width:15rem;">
+           <img src="../View/assets/icons/medic-icon.png" style="max-width:20%" class="card-img-top m-3" alt="Card Image">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title text-danger">Health Index</h5>
+            <p class="card-text mb-4">Health status is one of the priorities of this project - ITRACK. Students will be asked some health-related questions in the mobile application, results will reflect on the web. A feature to determine the factors that possibly affect the student’s performance.
+</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-image mb-0" style="background-image:url('../View/assets/images/vector.png'); height:42vh; background-repeat:no-repeat; position-absolute bottom-0 start-0;">
+    </div>
+  </div>
+</section>
+       
+
         <section class="d-flex flex-row w-100 bg-secondary" style="height:755px;"> <!-- Main Content Wrapper -->
             <article class="col-8 h-100 d-flex flex-column px-3 align-items-center justify-content-center text-light">
                 <div class="fs-1 fw-bolder w-100 mb-5 text-center ">
