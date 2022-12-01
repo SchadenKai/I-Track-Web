@@ -12,12 +12,12 @@ if __name__ == "__main__":
 
     ### DROP all foreign key constraints
     query = """
-        ALTER TABLE IF EXISTS class DROP CONSTRAINT fk_class_admin;
-        ALTER TABLE IF EXISTS class DROP CONSTRAINT fk_class_subject;        
-        ALTER TABLE IF EXISTS scores DROP CONSTRAINT fk_scores_class;        
-        ALTER TABLE IF EXISTS scores DROP CONSTRAINT fk_scores_student;                
-        ALTER TABLE IF EXISTS bulletin DROP CONSTRAINT fk_bulletin_class;
-        ALTER TABLE IF EXISTS health_index DROP CONSTRAINT fk_health_student;
+        ALTER TABLE IF EXISTS class DROP CONSTRAINT IF EXISTS fk_class_admin;
+        ALTER TABLE IF EXISTS class DROP CONSTRAINT IF EXISTS fk_class_subject;        
+        ALTER TABLE IF EXISTS scores DROP CONSTRAINT IF EXISTS fk_scores_class;        
+        ALTER TABLE IF EXISTS scores DROP CONSTRAINT IF EXISTS fk_scores_student;                
+        ALTER TABLE IF EXISTS bulletin DROP CONSTRAINT IF EXISTS fk_bulletin_class;
+        ALTER TABLE IF EXISTS health_index DROP CONSTRAINT IF EXISTS fk_health_student;
     """
     logging.debug("Dropping foreign key constraints")
     engine.execute_transaction(query)
