@@ -68,7 +68,7 @@ if (pg_num_rows($result) == 1){
     $_SESSION['userlogin'] = $user;      
     
     
-    file_put_contents('../app_data.json', json_encode($_SESSION));
+    file_put_contents('app_data.json', json_encode($_SESSION));
     header("location: ../../index.php");
 } else {
     // Else, return to login with an Error message
