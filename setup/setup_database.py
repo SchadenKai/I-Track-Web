@@ -12,12 +12,12 @@ if __name__ == "__main__":
 
     ### DROP all foreign key constraints
     query = """
-        ALTER TABLE IF EXISTS class DROP CONSTRAINT fk_class_admin;
-        ALTER TABLE IF EXISTS class DROP CONSTRAINT fk_class_subject;        
-        ALTER TABLE IF EXISTS scores DROP CONSTRAINT fk_scores_class;        
-        ALTER TABLE IF EXISTS scores DROP CONSTRAINT fk_scores_student;                
-        ALTER TABLE IF EXISTS bulletin DROP CONSTRAINT fk_bulletin_class;
-        ALTER TABLE IF EXISTS health_index DROP CONSTRAINT fk_health_student;
+        ALTER TABLE IF EXISTS class DROP CONSTRAINT IF EXISTS fk_class_admin;
+        ALTER TABLE IF EXISTS class DROP CONSTRAINT IF EXISTS fk_class_subject;        
+        ALTER TABLE IF EXISTS scores DROP CONSTRAINT IF EXISTS fk_scores_class;        
+        ALTER TABLE IF EXISTS scores DROP CONSTRAINT IF EXISTS fk_scores_student;                
+        ALTER TABLE IF EXISTS bulletin DROP CONSTRAINT IF EXISTS fk_bulletin_class;
+        ALTER TABLE IF EXISTS health_index DROP CONSTRAINT IF EXISTS fk_health_student;
     """
     logging.debug("Dropping foreign key constraints")
     engine.execute_transaction(query)
@@ -211,6 +211,15 @@ if __name__ == "__main__":
     logging.debug("Inserting records to health_index table")
     engine.insert_rows("health_index", records)
     logging.debug("All %s records inserted to health_index table", len(records))    
+
+    # Add grades to students based on their outputs
+    query = """
+    ALTER TABLE student ADD column grade numeric(5,2);
+    WITH student_grades AS (SELECT student_id, ROUND(AVG(score::decimal/overall_score) * 100, 2) as n FROM scores GROUP BY student_id) UPDATE student SET grade = sg.n FROM student_grades AS sg WHERE sr_code = sg.student_id;
+    """
+    logging.debug("Computing grades for students")
+    engine.execute_transaction(query)
+    logging.debug("Added grades (not transmuted) for students based on their outputs")
 
     # Close the database connection
     engine.close_connection()
