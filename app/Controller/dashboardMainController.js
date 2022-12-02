@@ -12,9 +12,8 @@ fetch("../Model/modules/app_data.json")
 $(document).ready(function () {
     schoolYear_filter();
     class_filter();
-    topStudentsHandlebar();
-});
-
+    topStudentsHandlebar(); 
+})
 
 function dashboardDetails(stored_data) {
     $('#student-count').text(stored_data.userlogin.student_count)
