@@ -50,7 +50,7 @@ document.title = "I-Track | Dashboard"
                     <img src="../View/assets/icons/no_of_students-icon.png" style="max-width:85px">
                     <div class="d-flex flex-column h-75 w-50 justify-content-end">
                         <p class="m-0">Student Count</p>
-                        <p class="fs-3 fw-semibold" id="student-count">150</p>
+                        <p class="fs-3 fw-semibold" id="student-count"></p>
                     </div>
                 </div>
                 <!-- Health Index Score -->
@@ -58,7 +58,7 @@ document.title = "I-Track | Dashboard"
                     <img src="../View/assets/icons/medic-icon.png" style="max-width:85px">
                     <div class="d-flex flex-column h-75 w-50 justify-content-center">
                         <p class="m-0 text-wrap">Health Index Score</p>
-                        <p class="fs-3 fw-semibold text-success" id="student-count">95.5%</p>
+                        <p class="fs-3 fw-semibold" id="health-index-score"></p>
                     </div>
                 </div>
                 <!-- Summary Grade -->
@@ -66,7 +66,7 @@ document.title = "I-Track | Dashboard"
                     <img src="../View/assets/icons/grade-icon.png" style="max-width:85px">
                     <div class="d-flex flex-column h-75 w-50 justify-content-center">
                         <p class="m-0 text-wrap">Overall Student's Summary Grade</p>
-                        <p class="fs-3 fw-semibold text-success" id="student-count">80.5%</p>
+                        <p class="fs-3 fw-semibold" id="overall-student-grade"></p>
                     </div>
                 </div>
             </div>
@@ -112,7 +112,7 @@ document.title = "I-Track | Dashboard"
                         <img src="../View/assets/icons/attendance-icon.png" class="h-75">
                         <div class="d-flex flex-column h-75 w-50 justify-content-center">
                             <p class="m-0 text-wrap">Number of Present Today</p>
-                            <p class="fs-3 fw-semibold text-success" id="student-count">120</p>
+                            <p class="fs-3 fw-semibold text-success" id="present-student-count"></p>
                         </div>
                     </div>
                 </div>
