@@ -1,8 +1,8 @@
 //Data Route from PHP to Frontend HTML
-export function adminInfo() {
+export function adminInfo(data) {
     // connect from php 
-    $('#admin_fullName').text("FirstName Lastname");
-    $('#admin_email').text("sampleemail@gmail.com");
+    $('#admin_fullName').text(data.userlogin.first_name + " " + data.userlogin.last_name);
+    $('#admin_email').text(data.userlogin.email);
 }
 // School Year Filter Choices
 export function schoolYear_filter() {
