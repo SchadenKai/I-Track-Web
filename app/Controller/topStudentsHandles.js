@@ -93,5 +93,5 @@ export function topStudentsHandlebar() {
     let templateFunction = Handlebars.compile($('#top_students_template').html())
     let filled = templateFunction(data)
     $('#top_students_grid').html(filled)
-    console.log(filled);
+    
 }

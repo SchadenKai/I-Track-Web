@@ -75,24 +75,20 @@
                 <!-- table headings -->
                 <a>
                    <div class="row border-0 bg-white fw-bold text-white">
-                    <div class="col border py-3" style="background-color: #133379;">No.</div>
-                    <div class="col border py-3" style="background-color: #133379;">First Name</div>
-                    <div class="col border py-3" style="background-color: #133379;">Middle Initial</div>
-                    <div class="col border py-3" style="background-color: #133379;">Last Name</div>
-                    <div class="col border py-3" style="background-color: #133379;">Status</div>
+                    <div class="col-3 border py-3" style="background-color: #133379;">Sr-Code</div>
+                    <div class="col-6 border py-3" style="background-color: #133379;">Full Name</div>
+                    <div class="col-3 border py-3" style="background-color: #133379;">Year Started</div>
                 </div> 
                 </a>
                 <div id="class_list_table"></div>
                 <!-- student row html template -->
                 <script id="student_template" type="text/x-handlebars-template">
-                    {{#each student}}
+                    {{#each userlogin.students}}
                     <a href="#" data-bs-target="#dashboard" data-bs-toggle="modal"> 
                         <div class="row border-0 bg-white">
-                            <div class="col border">{{sr_code}}</div>
-                            <div class="col border">{{first_name}}</div>
-                            <div class="col border">{{middle_initial}}</div>
-                            <div class="col border">{{last_name}}</div>
-                            <div class="col border">{{status}}</div>
+                            <div class="col-3 border py-2">{{sr_code}}</div>
+                            <div class="col-6 border py-2">{{name}}</div>
+                            <div class="col-3 border py-2">{{year_started}}</div>
                         </div>
                     </a>
                     {{/each}}
