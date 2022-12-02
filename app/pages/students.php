@@ -61,7 +61,7 @@
                 </button> 
                 <!-- Search functionality; search through the DB -->
 				<div class="input-group" style="width: 300px;">
-					<input type="text" class="form-control" placeholder="Search Students" aria-label="student-name" aria-describedby="input-group-right">
+					<input type="text" class="form-control" placeholder="Search Students" id="search-box">
 					<span class="input-group-text" id="input-group-right-example">
 						<i class="bi bi-search"></i>
 					</span>
