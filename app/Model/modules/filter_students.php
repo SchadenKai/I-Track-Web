@@ -21,8 +21,24 @@ if(isset($_POST['name'])) {
             break;
         }
     }
+}
 
- 
-    //print_r($_SESSION['userlogin']['students'][0]['sr_code']);
-} 
+if(isset($_POST['suggestion'])) {
+    $search =  $_POST['suggestion'];
+
+    $resultsArr = array();
+    
+    foreach ($_SESSION['userlogin']['students'] as $students) {
+        if(strpos(strtolower($students['name']), $search) !== false) {
+            array_push($resultsArr, $students);
+        }
+    }
+
+    if(sizeof($resultsArr) == 0) {
+        $resultsArr = $_SESSION['userlogin']['students'];
+    }
+    
+    $json = json_encode($resultsArr);
+    echo $json;
+}
 ?>

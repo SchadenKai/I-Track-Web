@@ -24,14 +24,3 @@ $(document).on('click', '.dropdown-item', function(e) {
     console.log(e.target)
 }, false); */
 
-$('#search-box').keypress(()=> {
-
-  let studentName = $("#search-box").val()
-
-  $.post("../../Model/modules/app_data.json",
-      {suggestion: studentName},
-      function(data,status) {
-          console.log(status);
-      }
-  )
-})
