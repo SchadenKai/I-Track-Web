@@ -18,7 +18,7 @@ export function studentDashboard() {
 function applyStudentData(data) {
     //conver string to object
     let obj = JSON.parse(data)
-
+    
     // connecting to pages
     $('#student-name').text(obj.name)
     $('#student-srcode').text(obj.sr_code)

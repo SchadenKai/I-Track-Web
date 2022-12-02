@@ -1,5 +1,5 @@
 import {adminInfo, schoolYear_filter, class_filter} from "./dynamicInfoHandles.js"
-import {topStudentsHandlebar} from "./topStudentsHandles.js"
+import {topStudentRequest} from "./topStudentsHandles.js"
 
 fetch("../Model/modules/app_data.json")
     .then((res) => res.json())
@@ -12,7 +12,7 @@ fetch("../Model/modules/app_data.json")
 $(document).ready(function () {
     schoolYear_filter();
     class_filter();
-    topStudentsHandlebar(); 
+    topStudentRequest(); 
 })
 
 function dashboardDetails(stored_data) {

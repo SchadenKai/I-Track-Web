@@ -121,13 +121,12 @@ document.title = "I-Track | Dashboard"
             <div class="row row-cols-2 w-100" id="top_students_grid" style="height:400px"> 
             </div>
             <script id="top_students_template" type="text/x-handlebars-template">
-                {{#each top_students}}
+                {{#each this}}
                 <div class="border col px-4 py-0 d-flex align-items-center justify-content-between">
-                    <img src="{{image_html}}" alt="user profile" style="width: 60px">
-                    <p id="student_name">{{student_name}}</p>
-                    <p id="sr_code">{{sr_code}}</p>
-                    <p id="class">{{class}}</p>
-                    <p id="gender">{{gender}}</p>  
+                    <img src="View/assets/icons/user-icon-placeholder.png" alt="user profile" style="width: 60px">
+                    <p id="student_name">{{this.name}}</p>
+                    <p id="sr_code">{{this.sr_code}}</p>
+                    <p id="gender">{{this.gender}}</p>  
                 </div>
                 {{/each}}
             </script>
