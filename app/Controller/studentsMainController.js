@@ -20,7 +20,7 @@ $('#search-box').keydown(()=> {
         function(data,status) {
             const obj = JSON.parse(data)
             insertTemplate_studentList(obj)
-            console.log(obj, status);
+            console.log(status);
         }
     )
   })
