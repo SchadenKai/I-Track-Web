@@ -19,6 +19,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- External CSS -->
     <link rel="stylesheet" type="text/css" href="../../View/css/styles.css">
+    <!-- ChartJS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 

@@ -10,7 +10,6 @@ $.get("../Model/modules/app_data.json",
     }
 )
 
-
 $('#search-box').keydown(()=> {
     
     let studentName = $("#search-box").val()

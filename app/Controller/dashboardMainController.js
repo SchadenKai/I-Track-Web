@@ -1,13 +1,24 @@
 import {adminInfo, schoolYear_filter, class_filter} from "./dynamicInfoHandles.js"
 import {topStudentRequest} from "./topStudentsHandles.js"
+import {displayChart} from "../View/assets/js/charts.js"
 
-fetch("../Model/modules/app_data.json")
-    .then((res) => res.json())
-    .then((data) => {
+
+
+$.get("../Model/modules/app_data.json",
+    function(data,status) {
         adminInfo(data);
         dashboardDetails(data)
-    })
-    .catch((error) => console.log(error))
+        console.log(status);
+    }
+)
+
+$.get("../Model/modules/health_index_dataset.php",
+    function(data, status) {
+        let json = JSON.parse(data)
+        displayChart(json)
+        console.log(json, status);
+    }
+)
 
 $(document).ready(function () {
     schoolYear_filter();

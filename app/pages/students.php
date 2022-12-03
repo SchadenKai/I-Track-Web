@@ -85,7 +85,7 @@
                 <script id="student_template" type="text/x-handlebars-template">
                     {{#each this}}
                     <a href="#" data-bs-target="#dashboard" data-bs-toggle="modal"> 
-                        <div class="row border-0 bg-white">
+                        <div class="row border-0 bg-white cstm-hover">
                             <div class="col-3 border py-2">{{this.sr_code}}</div>
                             <div class="col-6 border py-2">{{this.name}}</div>
                             <div class="col-3 border py-2">{{this.year_started}}</div>

@@ -1,6 +1,8 @@
 <?php
 require "./validation.php";
 
+
+// connected to student dashboard after on.click()
 if(isset($_POST['name'])) {
 
     $name = $_POST['name'];
@@ -23,6 +25,7 @@ if(isset($_POST['name'])) {
     }
 }
 
+// search bar filter 
 if(isset($_POST['suggestion'])) {
     $search =  $_POST['suggestion'];
 
@@ -37,7 +40,7 @@ if(isset($_POST['suggestion'])) {
     if(sizeof($resultsArr) == 0) {
         $resultsArr = $_SESSION['userlogin']['students'];
     }
-    
+
     $json = json_encode($resultsArr);
     echo $json;
 }
