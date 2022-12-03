@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="../../View/css/styles.css">
     <!-- ChartJS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- D3JS CDN -->
 </head>
 <body>
 

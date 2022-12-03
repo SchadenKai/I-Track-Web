@@ -95,7 +95,7 @@ document.title = "I-Track | Dashboard"
                     <div class="tab-content border rounded h-100">
                         <div class="tab-pane active p-4 bg-white h-100 grid" id="q1" role="tabpanel" aria-labelledby="home-tab" style="background-color:grey !important">
                             <div class="d-flex w-100 h-100 align-items-center">
-                                <canvas id="chronicChart" class="shadow m-3 p-2 border rounded bg-white"></canvas>
+                                <canvas id="chronicChart" class="shadow m-3 p-2 border rounded bg-white h-100 w-50"></canvas>
                                 <div class="d-flex flex-column h-100 w-75">
                                     <div class="d-flex text-white bg-info h-50 w-100 justify-content-evenly align-items-center border rounded my-3 px-5 shadow">
                                         <p id="chronic-count" class="fs-1 "><strong>100</strong></p>
@@ -112,7 +112,7 @@ document.title = "I-Track | Dashboard"
                         </div>
                         <div class="tab-pane p-4 bg-white h-100 grid" id="q2" role="tabpanel" aria-labelledby="home-tab" style="background-color:grey !important">
                             <div class="d-flex w-100 h-100 align-items-center">
-                                <canvas id="illChart" class="shadow m-3 p-2 border rounded bg-white"></canvas>
+                                <canvas id="illChart" class="shadow m-3 p-2 border rounded bg-white  h-100 w-50"></canvas>
                                 <div class="d-flex flex-column h-100 w-75">
                                     <div class="d-flex text-white bg-info h-50 w-100 justify-content-evenly align-items-center border rounded my-3 px-5 shadow">
                                         <p id="ill-count" class="fs-1 "><strong>100</strong></p>
@@ -129,7 +129,7 @@ document.title = "I-Track | Dashboard"
                         </div>
                         <div class="tab-pane p-4 bg-white h-100 grid" id="q3" role="tabpanel" aria-labelledby="home-tab" style="background-color:grey !important">
                             <div class="d-flex w-100 h-100 align-items-center">
-                                <canvas id="admittedChart" class="shadow m-3 p-2 border rounded bg-white"></canvas>
+                                <canvas id="admittedChart" class="shadow m-3 p-2 border rounded bg-white  h-100 w-50"></canvas>
                                 <div class="d-flex flex-column h-100 w-75">
                                     <div class="d-flex text-white bg-info h-50 w-100 justify-content-evenly align-items-center border rounded my-3 px-5 shadow">
                                         <p id="admitted-count" class="fs-1 "><strong>100</strong></p>
@@ -146,7 +146,7 @@ document.title = "I-Track | Dashboard"
                         </div>
                         <div class="tab-pane p-4 bg-white h-100 grid" id="q4" role="tabpanel" aria-labelledby="home-tab" style="background-color:grey !important">
                             <div class="d-flex w-100 h-100 align-items-center">
-                                <canvas id="injuredChart" class="shadow m-3 p-2 border rounded bg-white"></canvas>
+                                <canvas id="injuredChart" class="shadow m-3 p-2 border rounded bg-white  h-100 w-50"></canvas>
                                 <div class="d-flex flex-column h-100 w-75">
                                     <div class="d-flex text-white bg-info h-50 w-100 justify-content-evenly align-items-center border rounded my-3 px-5 shadow">
                                         <p id="injured-count" class="fs-1 "><strong>100</strong></p>

@@ -70,7 +70,7 @@ document.title = "I-Track | About"
   <div class="container">
     <div class="row pt-0 pb-5">
       <div class="col-12">
-        <h1 class="text-center text-danger border-bottom mb-4">What We Offer</h1>
+        <h1 class="text-center text-danger border-bottom pb-3 mb-4">What We Offer</h1>
       </div>
     </div>
     <div class="row">
@@ -79,7 +79,7 @@ document.title = "I-Track | About"
         <div class="card border-0 ms-5" style="width:15rem;">
            <img src="../View/assets/icons/no_of_students-icon.png" style="max-width:20%" class="card-img-top m-3" alt="No of Students"> 
           <div class="card-body d-flex flex-column">
-            <h5 class="card-title text-danger">Academic Progress Tracker</h5>
+            <h5 class="card-title text-danger fs-3">Academic Progress Tracker</h5>
             <p class="card-text text-justify mb-4">Record students scores and grades for the current semester in the productivity app, where graphs regarding the received data will be shown both on the web and mobile, together with the expected general weighted average.
 </p>
 
@@ -88,10 +88,10 @@ document.title = "I-Track | About"
       </div>
       
       <div class="col-lg-4 mb-3 d-flex align-items-stretch">
-        <div class="card border-0 bg-danger ms-5" style="width:15rem;">
+        <div class="card border-0 ms-5" style="width:15rem; background-color:#DC3545">
            <img src="../View/assets/icons/psy.png" style="max-width:20%" class="card-img-top m-3" alt="Card Psychology">
           <div class="card-body d-flex flex-column">
-            <h5 class="card-title text-black">Well-being Tracker
+            <h5 class="card-title text-black fs-3">Well-being Tracker
 </h5>
             <p class="card-text text-white mb-4">Mobile application's feature concerning the students' well-being, where students will be given set of questions with a scale of 1-5 to answer. This will help promote the student’s well being and let them be aware of their psychological status.</p>
 
@@ -103,7 +103,7 @@ document.title = "I-Track | About"
         <div class="card border-0 ms-5" style="width:15rem;">
            <img src="../View/assets/icons/medic-icon.png" style="max-width:20%" class="card-img-top m-3" alt="Card Image">
           <div class="card-body d-flex flex-column">
-            <h5 class="card-title text-danger">Health Index</h5>
+            <h5 class="card-title text-danger fs-3">Health Index</h5>
             <p class="card-text mb-4">Health status is one of the priorities of this project - ITRACK. Students will be asked some health-related questions in the mobile application, results will reflect on the web. A feature to determine the factors that possibly affect the student’s performance.
 </p>
 
