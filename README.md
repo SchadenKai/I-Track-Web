@@ -4,7 +4,7 @@ A Student Progress Tracker is an application built for students to track their p
 
 This repository contains the web application for our `I-Track` school project.
 
-![](docs/out.gif)
+![](docs/demo.gif)
 
 ## Prerequisites
 
