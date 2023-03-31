@@ -4,11 +4,14 @@ import datetime
 import csv
 import logging
 import json
+import os
 from password_generator import PasswordGenerator
 from scipy.stats import skewnorm
 
-class DataGenerator:
-    def __init__(self):
+class DataGenerator:    
+
+    def __init__(self):       
+
         # in 1 semester(5 months: 2 exam, weekly quiz and activity. Set the attendance for class A as MTW, B as WThF, C as FSS
         # Semester 2 starts in week 4 (end of Jan). Semester 1 in week 31 (start of Aug)
         self.semester_starting_week = {
@@ -24,11 +27,11 @@ class DataGenerator:
         }
 
         # Computer Science curriculum
-        with open("setup/data/curriculum.json") as f:
+        with open(f"{os.path.dirname(os.path.abspath(__file__))}/data/curriculum.json") as f:
             self.curriculum = json.load(f)
         
     @staticmethod        
-    def write_csv(filepath, all_data):
+    def write_csv(filename, all_data):
         """
         Write a list of dictionary into a local CSV file
 
@@ -43,7 +46,7 @@ class DataGenerator:
         -----------
         None
         """
-        with open(filepath, "w", newline="", encoding = "UTF-8") as f:
+        with open(f"/tmp/{filename}", "w", newline="", encoding = "UTF-8") as f:
             writer = csv.DictWriter(f, all_data[0].keys())
             writer.writeheader()
             writer.writerows(all_data)
@@ -266,14 +269,14 @@ class DataGenerator:
             # Append to all student data
             self.student_data.append(current_student)
         
-        csv_filepath = "setup/data/students.csv"
+        csv_filepath = "students.csv"
         DataGenerator.write_csv(csv_filepath, self.student_data)
         logging.info("720 dummy student data written to %s", csv_filepath)
             
 
     def generate_subject_data(self):       
         """
-        List out all the subjects based on CS curriculum. Write the output to a local CSV file in setup/data/subjects.csv        
+        List out all the subjects based on CS curriculum. Write the output to a local CSV file in subjects.csv        
         """
 
         # Grab all subjects from curriculum
@@ -283,7 +286,7 @@ class DataGenerator:
                 all_subjects.extend(subjects)
 
         # Write the data to CSV
-        csv_filepath = "setup/data/subjects.csv"
+        csv_filepath = "subjects.csv"
         DataGenerator.write_csv(csv_filepath, all_subjects)
         logging.info("%s subject data based on Batangas State University's Computer Science curriculum written to %s", len(all_subjects), csv_filepath)
 
@@ -340,11 +343,11 @@ class DataGenerator:
 
     def generate_class_data(self):
         """
-        Generate class data for database.class table. Write the output to a local CSV file in setup/data/class.csv
+        Generate class data for database.class table. Write the output to a local CSV file in class.csv
         """
         self.all_classes = []
 
-        all_admins = DataGenerator.read_csv("setup/data/admin.csv")
+        all_admins = DataGenerator.read_csv(f"{os.path.dirname(os.path.abspath(__file__))}/data/admin.csv")
         int_equivalent = {"First Year": 1, "Second Year": 2, "Third Year": 3, "Fourth Year": 4}
         
         # Loop over the CS curriculum. Declared in __init__
@@ -380,7 +383,7 @@ class DataGenerator:
                         admin_index += 1
 
         # Write the data to CSV
-        csv_filepath = "setup/data/class.csv"
+        csv_filepath = "class.csv"
         DataGenerator.write_csv(csv_filepath, self.all_classes)
         logging.info("55 classes with 3 sections each totalling to 165 records generated and written to local CSV file %s", csv_filepath)
 
@@ -438,7 +441,7 @@ class DataGenerator:
                     scores_data.append(student_score)
 
         # Write the data to CSV
-        csv_filepath = "setup/data/scores.csv"
+        csv_filepath = "scores.csv"
         DataGenerator.write_csv(csv_filepath, scores_data)
         logging.info("%s dummy data for scores table generated and written to local CSV file %s", len(scores_data), csv_filepath)
 
@@ -460,7 +463,7 @@ class DataGenerator:
             bulletin.append(announcement)
         
         # Write the data to CSV
-        csv_filepath = "setup/data/bulletin.csv"
+        csv_filepath = "bulletin.csv"
         DataGenerator.write_csv(csv_filepath, bulletin)
         logging.info("%s announcements for bulletin table generated and written to local CSV file %s", len(bulletin), csv_filepath)
 
@@ -496,7 +499,7 @@ class DataGenerator:
                     logging.debug("Generated 2 health indexes input for %s in ISO week number %s", student, week_number)
 
         # Write the data to CSV
-        csv_filepath = "setup/data/health_index.csv"
+        csv_filepath = "health_index.csv"
         DataGenerator.write_csv(csv_filepath, health_indexes)
         logging.info("%s records of health index generated and written to local CSV file %s", len(health_indexes), csv_filepath)
 
