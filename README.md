@@ -22,23 +22,23 @@ This repository contains the web application for our `I-Track` school project.
 - Navigate to the folder
   - `cd /path/to/I-Track-Web`
 
-- Create `app/credentials.ini` file and write the credentials of your PostgreSQL database
+- List out your PostgreSQL database credentials on `app/.env` file 
 
   ```ini
-  [postgresql]
-  host=<database host>
-  database=<database name>
-  user=<username with access to db>
-  password=<password of username above>
+  POSTGRES_USER=<username with access to db>
+  POSTGRES_DB=<database name>
+  POSTGRES_PASSWORD=<password of username above>
   ```
 
-  If you really have no PostgreSQL database setup, temporarily use [this credentials.ini](https://anonfiles.com/NcqanbF8y0/credentials_ini). Remember to place it in `/app`
+  If you really have no PostgreSQL database setup:
+
+  `mv app/sample.env app/.env`
 
 - While in root `I-Track-Web` directory, build and run the image
 
-  - `docker-compose build`
+  - `docker compose build`
 
-  - `docker-compose up -d`
+  - `docker compose up -d`
 
 
   **Note**: Run `docker-compose build` only once or when `Dockerfile`/`docker-compose.yaml` is changed. Only the `docker-compose up -d` is needed for subsequent runs
