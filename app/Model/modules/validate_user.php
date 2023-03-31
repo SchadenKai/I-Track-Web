@@ -5,7 +5,7 @@ require_once('../configs/psql_conn.php');
 
 // Login Credentials
 $usr_email = $_POST['email'];
-$usr_pw = md5($_POST['password']);  
+$usr_pw = $_POST['password'];  
 
 
 // Check the existence of user login credentials in the database

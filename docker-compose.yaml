@@ -2,8 +2,19 @@ version: '3'
 services:
   php-apache-environment:
     container_name: php-apache
-    build: .
+    build: ./docker/php/
     volumes:
       - ./app:/var/www/html
     ports:
       - 8000:80
+  postgres:
+    build: ./docker/postgres/
+    image: postgres:15.2
+    restart: always
+    env_file:
+      - ./app/.env
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./db:/var/lib/postgresql/data
+      - ./setup/:/docker-entrypoint-initdb.d/    

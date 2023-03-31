@@ -1,0 +1,3 @@
+names
+random-password-generator
+scipy

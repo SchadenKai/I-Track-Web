@@ -1,4 +1,4 @@
-credentials.ini
+app/.env
 setup/venv
 setup/__pycache__/
 setup/data/class.csv
@@ -7,4 +7,4 @@ setup/data/students.csv
 setup/data/scores.csv
 setup/data/bulletin.csv
 setup/data/health_index.csv
-app/Model/app_data.json
+app/Model/modules/app_data.json
