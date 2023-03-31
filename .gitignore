@@ -1,4 +1,4 @@
-credentials.ini
+app/.env
 setup/venv
 setup/__pycache__/
 setup/data/class.csv
