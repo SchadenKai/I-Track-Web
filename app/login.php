@@ -70,7 +70,7 @@ if(isset($_SESSION['userlogin'])){
                         <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
                         <label for="password" class="form-label">Password</label>
                     <div class="input-group-text">
-                        <input type="checkbox" id="password-toggle">
+                        <input type="checkbox" id="passwordToggle">
                         <label for="password-toggle">&nbsp;Show Password</label>
                     </div>
                     </div>              
@@ -91,7 +91,7 @@ if(isset($_SESSION['userlogin'])){
 </body>
 <script>
 const passwordField = document.querySelector(".password-field");
-const passwordToggle = document.querySelector("#password-toggle");
+const passwordToggle = document.querySelector("#passwordToggle");
 
 passwordToggle.addEventListener("change", function () {
   if (this.checked) {
@@ -102,8 +102,6 @@ passwordToggle.addEventListener("change", function () {
     document.querySelector("#password").type = "password";
   }
 });
-btn.addEventListener('click', function handleClick() {
-login
 </script>
 </html>
 
