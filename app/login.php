@@ -13,7 +13,7 @@ if(isset($_SESSION['userlogin'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "icon" href = "assets/icons/logo.png" type = "image/x-icon">
+    <link rel = "icon" href = "View/assets/icons/logo.png" type = "image/x-icon">
     <!-- Page Title -->
     <title>Login | I-Track</title>
 
@@ -31,7 +31,7 @@ if(isset($_SESSION['userlogin'])){
 <body class="background-image" style="overflow: hidden; height: 100vh">
 
 <!-- main section spanning whole vh-->
-<section class=" container bg-light h-100 p-0 glassmorphism-1" style="max-width: 1000px;">
+<section class=" container bg-light h-100 p-0 glassmorphism-1" style="max-width: 800px;">
 
     <!-- heading image -->
     <img src="View/assets/images/header-img.png" class="w-100">
