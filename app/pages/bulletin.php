@@ -1,3 +1,5 @@
+Bulletin
+
 <?php 
 	require "../Model/modules/validation.php";
     include "../View/includes/nav.php";
@@ -11,7 +13,7 @@ document.title = "I-Track | Bulletin"
 
 <!-- Content of the Page -->
 <!-- Content of the Page Wrapper-->
-<div class="d-flex h-100  w-100 justify-content-center pt-5 background-image">
+<div class="d-flex h-auto  w-auto justify-content-center pt-5 background-image">
 
 	<!-- Content Container -->
     <div class="shadow border w-100 mx-5 mb-5 glassmorphism-1" style="max-width:1317px;"> 
@@ -63,7 +65,7 @@ document.title = "I-Track | Bulletin"
 
         <section class="d-flex flex-column container-fluid align-items-center"> <!-- Fill width; center content -->
             <!-- Class List Container -->
-            <form class="d-flex flex-column border rounded h-auto m-5 py-3 px-5 text-center " style="width: 85%; background-color: rgb(185, 185, 185)" method="post" action=""> 
+            <form class="d-flex flex-column border rounded h-auto m-3 py-3 px-5 text-center " style="width: 85%; background-color: rgb(185, 185, 185)" method="post" action=""> 
                 <div class="form-floating">
                     <textarea class="form-control shadow" placeholder="Leave a comment here" id="floatingTextarea" style="height: 250px"></textarea>
                     <label for="floatingTextarea">Announce something...</label>
