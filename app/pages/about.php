@@ -1,5 +1,3 @@
-About
-
 <?php 
 	require "../Model/modules/validation.php";
     include "../View/includes/nav.php";
