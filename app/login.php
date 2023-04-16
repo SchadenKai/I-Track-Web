@@ -66,11 +66,15 @@ if(isset($_SESSION['userlogin'])){
                         <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" required>
                         <label for="email" class="form-label">Email Address</label>
                     </div>
-                    <div class="mb-3 form-floating">
+                    <div class="mb-3 form-floating password-field">
                         <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
                         <label for="password" class="form-label">Password</label>
+                    <div class="input-group-text">
+                        <input type="checkbox" id="password-toggle">
+                        <label for="password-toggle">&nbsp;Show Password</label>
+                    </div>
                     </div>              
-                        <button type="submit" class="btn btn-warning rounded-pill mt-1" id="login" name="login" style="min-width: 120px;">
+                    <button type="submit" class="btn btn-warning rounded-pill mt-1" id="login" name="login" style="min-width: 120px;" onclick="this.classList.add('disabled'); this.innerHTML='<span class=\'spinner-border spinner-border-sm\' role=\'status\' aria-hidden=\'true\'></span> Loading...';">
                         Login
                     </button>
                 </form>
@@ -85,6 +89,22 @@ if(isset($_SESSION['userlogin'])){
 
     
 </body>
+<script>
+const passwordField = document.querySelector(".password-field");
+const passwordToggle = document.querySelector("#password-toggle");
+
+passwordToggle.addEventListener("change", function () {
+  if (this.checked) {
+    passwordField.classList.add("show-password");
+    document.querySelector("#password").type = "text";
+  } else {
+    passwordField.classList.remove("show-password");
+    document.querySelector("#password").type = "password";
+  }
+});
+btn.addEventListener('click', function handleClick() {
+login
+</script>
 </html>
 
 <!-- Clear up Error session after leaving or reloading the page -->
