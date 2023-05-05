@@ -157,7 +157,8 @@ WITH student_grades AS (SELECT student_id, ROUND(AVG(score::decimal/overall_scor
 
 -- reset_tokens - store token when the user tried to reset the password
 CREATE TABLE reset_tokens(
-    email VARCHAR(50) PRIMARY KEY, 
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(50), 
     reset_token CHAR(64) NOT NULL, 
     created_at DATE
 );
