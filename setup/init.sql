@@ -154,3 +154,11 @@ CSV HEADER;
 -- Add grade column
 ALTER TABLE student ADD column grade numeric(5,2);
 WITH student_grades AS (SELECT student_id, ROUND(AVG(score::decimal/overall_score) * 100, 2) as n FROM scores GROUP BY student_id) UPDATE student SET grade = sg.n FROM student_grades AS sg WHERE sr_code = sg.student_id;
+
+-- reset_tokens - store token when the user tried to reset the password
+CREATE TABLE reset_tokens(
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(50), 
+    reset_token CHAR(64) NOT NULL, 
+    created_at DATE
+);

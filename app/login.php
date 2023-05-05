@@ -69,10 +69,22 @@ if(isset($_SESSION['userlogin'])){
                     <div class="mb-3 form-floating password-field">
                         <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
                         <label for="password" class="form-label">Password</label>
-                    <div class="input-group-text">
-                        <input type="checkbox" id="passwordToggle">
-                        <label for="password-toggle">&nbsp;Show Password</label>
+                    
+
+                    <div class="mb-3">
+                        
+                        <div style="float:left;">
+                            <a href="reset/reset.php">Forgot password?</a>
+                        </div>
+                        <div style="float:right;">
+                            <input type="checkbox" id="passwordToggle">
+                            <label for="password-toggle">&nbsp;Show Password</label>
+                        </div>
+                        
                     </div>
+
+                    <br>
+              
                     </div>              
                     <button type="submit" class="btn btn-warning rounded-pill mt-1" id="login" name="login" style="min-width: 120px;" onclick="this.classList.add('disabled'); this.innerHTML='<span class=\'spinner-border spinner-border-sm\' role=\'status\' aria-hidden=\'true\'></span> Loading...';">
                         Login

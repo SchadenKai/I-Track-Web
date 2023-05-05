@@ -1,7 +1,7 @@
 <?php
 
 // Database Credentials
-$file_content = explode("\n", file_get_contents("../../.env"));
+$file_content = explode("\n", file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/.env"));
 $db_host = "postgres";
 $db_user = explode("=", $file_content[0])[1];
 $db_database = explode("=", $file_content[1])[1];
