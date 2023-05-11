@@ -13,10 +13,10 @@
 </script>
 
 <!-- Content of the Page Wrapper-->
-<div class="d-flex w-100 justify-content-center pt-5" style="min-height: 100%;">
+<div class="d-flex w-100 justify-content-center pt-5 bg-secondary" style="min-height: 100%;">
     
 	<!-- Content Container -->
-    <div class="shadow border w-100 mb-5 mx-5 bg-white" style="max-width:1317px;"> 
+    <div class="shadow border w-100 mb-5 mx-5 bg-white" style="max-width:1140px;"> 
 
 		<!-- I-track Nav -->
         <nav class="nav nav-pills nav-fill custom-navbar">
@@ -75,9 +75,9 @@
                 <!-- table headings -->
                 <a>
                    <div class="row border-0 bg-white fw-bold text-white">
-                    <div class="col-3 border py-3" style="background-color: #133379;">Sr-Code</div>
-                    <div class="col-6 border py-3" style="background-color: #133379;">Full Name</div>
-                    <div class="col-3 border py-3" style="background-color: #133379;">Year Started</div>
+                    <div class="col-3 border py-3" style="background-color: #DC3545;">Sr-Code</div>
+                    <div class="col-6 border py-3" style="background-color: #DC3545;">Full Name</div>
+                    <div class="col-3 border py-3" style="background-color: #DC3545;">Year Started</div>
                 </div> 
                 </a>
                 <div id="class_list_table"></div>
