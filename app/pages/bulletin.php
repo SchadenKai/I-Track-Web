@@ -11,10 +11,10 @@ document.title = "I-Track | Bulletin"
 
 <!-- Content of the Page -->
 <!-- Content of the Page Wrapper-->
-<div class="d-flex h-auto  w-auto justify-content-center pt-5 background-image">
+<div class="d-flex h-auto  w-auto justify-content-center pt-5 bg-secondary">
 
 	<!-- Content Container -->
-    <div class="shadow border w-100 mx-5 mb-5 glassmorphism-1" style="max-width:1317px;"> 
+    <div class="shadow border w-100 mx-5 mb-5 glassmorphism-1" style="max-width:1140px;"> 
 		<!-- I-track Nav -->
         <nav class="nav nav-pills nav-fill custom-navbar">
             <li class="nav-item">
