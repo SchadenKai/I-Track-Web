@@ -40,8 +40,8 @@
 
         <div class="d-flex flex-column justify-content-center align-items center ms-4 text-white">            
 
-            <div class="fs-2 text-nowrap" id="admin_fullName">{{admin_data.admin_fullName}}</div>
-            <div class="fw-lighter text-nowrap" id="admin_email">{{admin_data.admin_email}}</div>
+            <div class="fs-2 text-nowrap" id="admin_fullName">Loading...</div>
+            <div class="fw-lighter text-nowrap" id="admin_email">Retrieving data...</div>
            
         </div>
     </div>
