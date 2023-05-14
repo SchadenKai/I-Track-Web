@@ -10,6 +10,7 @@ session_start();
 	if(isset($_GET['logout'])){
 		session_destroy();
 		unset($_SESSION);
-		header("Location: ../../login.php");
+		unlink($_SERVER['DOCUMENT_ROOT'] . '/Model/modules/app_data.json');
+		header("Location: ../../login.php");		
 	}
 ?>
