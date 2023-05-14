@@ -1,45 +1,48 @@
-<?php 
-	require "Model/modules/validation.php";
+<?php
+    require "Model/modules/validation.php";
     include "View/includes/nav.php";
 ?>
+
 
 <!-- Change the Document Title-->
 <script>
 document.title = "I-Track | Dashboard"
 </script>
 
+
 <!-- Content of the Page -->
 <!-- Content of the Page Wrapper-->
 <div class="d-flex w-100  justify-content-center pt-5 bg-secondary">
-	<!-- Content Container -->
-    <div class="container shadow border glassmorphism-1 p-0"> 
-		<!-- I-track Nav -->
+    <!-- Content Container -->
+    <div class="container shadow border glassmorphism-1 p-0">
+        <!-- I-track Nav -->
         <nav class="nav nav-pills nav-fill custom-navbar">
             <li class="nav-item">
                 <a class="nav-link h-100 active"  href="index.php">
                     <i class="bi bi-house-fill me-2"></i>
-                    Dashboard 
+                    Dashboard
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link"  href="pages/students.php">
                     <i class="bi bi-house-fill me-2"></i>
-                    Students 
+                    Students
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="pages/bulletin.php">
                     <i class="bi bi-postcard me-2"></i>
-                    Bulletin 
+                    Bulletin
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="pages/about.php">
                     <i class="bi bi-info-circle me-2"></i>
-                    About 
+                    About
                 </a>
             </li>
-		</nav>
+        </nav>
+
 
         <section class="d-flex flex-column p-5 bg-white w-100" style="height:auto"> <!-- Main Content Wrapper -->
             <h2 class="fw-semibold mb-3">Dashboard</h2>
@@ -90,7 +93,7 @@ document.title = "I-Track | Dashboard"
                         <button class="nav-link" id="q4-tab" data-bs-toggle="tab" data-bs-target="#q4" type="button" role="tab" aria-controls="messages" aria-selected="false">Question 4</button>
                     </li>
                     </ul>
-                    
+                   
                     <!-- Tab panes -->
                     <div class="tab-content border rounded h-100">
                         <div class="tab-pane active p-4 bg-white h-100 grid" id="q1" role="tabpanel" aria-labelledby="home-tab" style="background-color:grey !important">
@@ -98,13 +101,13 @@ document.title = "I-Track | Dashboard"
                                 <canvas id="chronicChart" class="shadow m-3 p-2 border rounded bg-white h-100 w-50"></canvas>
                                 <div class="d-flex flex-column h-100 w-75">
                                     <div class="d-flex text-white bg-info h-50 w-100 justify-content-evenly align-items-center border rounded my-3 px-5 shadow">
-                                        <p id="chronic-count" class="fs-1 "><strong>100</strong></p>
-                                        <p class="text-wrap fs-4  text-center">with Chronic Disease</p>
-                                        <img src="./View/assets/icons/like-icon.png" style="width:100px" class="">
-                                    </div>
-                                    <div class="d-flex text-white bg-danger h-50 w-100 justify-content-evenly align-items-center border rounded my-3 px-5 shadow">
                                         <p id="nochronic-count" class="fs-1 "><strong>100</strong></p>
                                         <p class="text-wrap fs-4  text-center">without Chronic Disease</p>
+                                        <img src="./View/assets/icons/like-icon.png" style="width:100px" class="">
+                                    </div>    
+                                    <div class="d-flex text-white bg-danger h-50 w-100 justify-content-evenly align-items-center border rounded my-3 px-5 shadow">
+                                        <p id="chronic-count" class="fs-1 "><strong>100</strong></p>
+                                        <p class="text-wrap fs-4  text-center">with Chronic Disease</p>
                                         <img src="./View/assets/icons/dislike-icon.png" style="width:100px" class="">
                                     </div>
                                 </div>
@@ -115,13 +118,13 @@ document.title = "I-Track | Dashboard"
                                 <canvas id="illChart" class="shadow m-3 p-2 border rounded bg-white  h-100 w-50"></canvas>
                                 <div class="d-flex flex-column h-100 w-75">
                                     <div class="d-flex text-white bg-info h-50 w-100 justify-content-evenly align-items-center border rounded my-3 px-5 shadow">
-                                        <p id="ill-count" class="fs-1 "><strong>100</strong></p>
-                                        <p class="text-wrap fs-4  text-center">currenly Ill</p>
-                                        <img src="./View/assets/icons/like-icon.png" style="width:100px" class="">
-                                    </div>
-                                    <div class="d-flex text-white bg-danger h-50 w-100 justify-content-evenly align-items-center border rounded my-3 px-5 shadow">
                                         <p id="noill-count" class="fs-1 "><strong>100</strong></p>
                                         <p class="text-wrap fs-4  text-center">currently Well</p>
+                                        <img src="./View/assets/icons/like-icon.png" style="width:100px" class="">
+                                    </div>    
+                                    <div class="d-flex text-white bg-danger h-50 w-100 justify-content-evenly align-items-center border rounded my-3 px-5 shadow">
+                                        <p id="ill-count" class="fs-1 "><strong>100</strong></p>
+                                        <p class="text-wrap fs-4  text-center">currenly Ill</p>
                                         <img src="./View/assets/icons/dislike-icon.png" style="width:100px" class="">
                                     </div>
                                 </div>
@@ -131,16 +134,16 @@ document.title = "I-Track | Dashboard"
                             <div class="d-flex w-100 h-100 align-items-center">
                                 <canvas id="admittedChart" class="shadow m-3 p-2 border rounded bg-white  h-100 w-50"></canvas>
                                 <div class="d-flex flex-column h-100 w-75">
-                                    <div class="d-flex text-white bg-info h-50 w-100 justify-content-evenly align-items-center border rounded my-3 px-5 shadow">
-                                        <p id="admitted-count" class="fs-1 "><strong>100</strong></p>
-                                        <p class="text-wrap fs-4  text-center">admitted to the Hospital</p>
-                                        <img src="./View/assets/icons/like-icon.png" style="width:100px" class="">
-                                    </div>
-                                    <div class="d-flex text-white bg-danger h-50 w-100 justify-content-evenly align-items-center border rounded my-3 px-5 shadow">
+                                <div class="d-flex text-white bg-info h-50 w-100 justify-content-evenly align-items-center border rounded my-3 px-5 shadow">
                                         <p id="notadmitted-count" class="fs-1 "><strong>100</strong></p>
                                         <p class="text-wrap fs-4  text-center">not admitted to the Hospital</p>
+                                        <img src="./View/assets/icons/like-icon.png" style="width:100px" class="">
+                                    </div>    
+                                <div class="d-flex text-white bg-danger h-50 w-100 justify-content-evenly align-items-center border rounded my-3 px-5 shadow">
+                                        <p id="admitted-count" class="fs-1 "><strong>100</strong></p>
+                                        <p class="text-wrap fs-4  text-center">admitted to the Hospital</p>
                                         <img src="./View/assets/icons/dislike-icon.png" style="width:100px" class="">
-                                    </div>
+                                    </div>                                  
                                 </div>
                             </div>
                         </div>
@@ -149,15 +152,15 @@ document.title = "I-Track | Dashboard"
                                 <canvas id="injuredChart" class="shadow m-3 p-2 border rounded bg-white  h-100 w-50"></canvas>
                                 <div class="d-flex flex-column h-100 w-75">
                                     <div class="d-flex text-white bg-info h-50 w-100 justify-content-evenly align-items-center border rounded my-3 px-5 shadow">
-                                        <p id="injured-count" class="fs-1 "><strong>100</strong></p>
-                                        <p class="text-wrap fs-4  text-center">Injured</p>
+                                        <p id="notinjured-count" class="fs-1 "><strong>100</strong></p>
+                                        <p class="text-wrap fs-4  text-center">not Injured</p>
                                         <img src="./View/assets/icons/like-icon.png" style="width:100px" class="">
                                     </div>
                                     <div class="d-flex text-white bg-danger h-50 w-100 justify-content-evenly align-items-center border rounded my-3 px-5 shadow">
-                                        <p id="notinjured-count" class="fs-1 "><strong>100</strong></p>
-                                        <p class="text-wrap fs-4  text-center">not Injured</p>
+                                        <p id="injured-count" class="fs-1 "><strong>100</strong></p>
+                                        <p class="text-wrap fs-4  text-center">Injured</p>
                                         <img src="./View/assets/icons/dislike-icon.png" style="width:100px" class="">
-                                    </div>
+                                    </div>            
                                 </div>
                             </div>
                         </div>
@@ -165,7 +168,7 @@ document.title = "I-Track | Dashboard"
                 </div>
             </div>
             <h2 class="fw-semibold mb-3 mt-5">Top Performing Students</h2>
-            <div class="row row-cols-2 w-100" id="top_students_grid" style="height:400px"> 
+            <div class="row row-cols-2 w-100" id="top_students_grid" style="height:400px">
             </div>
             <script id="top_students_template" type="text/x-handlebars-template">
                 {{#each this}}
@@ -179,9 +182,12 @@ document.title = "I-Track | Dashboard"
             </script>
 
 
+
+
         </section> <!-- Content -->
-		
+       
     </div> <!-- Wrapper -->
 </div> <!-- Page -->
 <script type="module" src="Controller/dashboardMainController.js"></script>
 <script type="text/javascript" src="../View/assets/js/eventHandles.js"></script>
+
